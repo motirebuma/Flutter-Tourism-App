@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678641497101",
+    "project_id": "alobawa",
+    "storage_bucket": "alobawa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678641497101:android:91a8992eb9747720051144",
+        "android_client_info": {
+          "package_name": "com.example.alobawa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678641497101-heeopj7u1v3r6gmse6q2mp89hfqcel8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYkP3yngHIlDWBvYSHJ_ha1ZrktSX7ue4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678641497101-heeopj7u1v3r6gmse6q2mp89hfqcel8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
