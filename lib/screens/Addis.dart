@@ -1,9 +1,12 @@
+import 'package:alobawa/screens/homeScreen.dart';
 import 'package:alobawa/screens/mapShow.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
 // import 'package:alobawa/screens/mapTest.dart';
 import 'package:alobawa/screens/park/park.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../routes/route.dart' as route;
 
 class Addis extends StatefulWidget {
   const Addis({super.key});
@@ -101,6 +104,73 @@ class _AddisState extends State<Addis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // !! bottom app bar
+      floatingActionButton: FloatingActionButton(
+        //Floating action button on Scaffold
+        backgroundColor: Color(0xffd27405),
+        onPressed: () {
+          //code to execute on button press
+          Navigator.pushNamed(context, route.homePage);
+        },
+        child: Icon(
+          Icons.home,
+          color: Color(0xff1c1c1c),
+        ), //icon inside button
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+      //floating action button location to left
+
+      bottomNavigationBar: BottomAppBar(
+        //bottom navigation bar on scaffold
+        color: Color(0xff1c1c1c),
+        shape: CircularNotchedRectangle(), //shape of notch
+        notchMargin:
+            5, //notche margin between floating button and bottom appbar
+        child: Row(
+          //children inside bottom appbar
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 90),
+              child: IconButton(
+                icon: Icon(
+                  Icons.calendar_month,
+                  color: Color(0xffd27405),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, route.calendar);
+                },
+              ),
+            ),
+            IconButton(
+              icon: const FaIcon(
+                FontAwesomeIcons.moneyBillTrendUp,
+                color: Color(0xffd27405),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, route.currency);
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.info,
+                color: Color(0xffd27405),
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: FaIcon(
+                FontAwesomeIcons.user,
+                color: Color(0xffd27405),
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
+      // !! bottom app bar
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         toolbarHeight: 250,
@@ -217,16 +287,22 @@ class _AddisState extends State<Addis> {
                       ],
                     ),
                     // list view
-                    const Text(
-                      'Public Parks',
-                      style: TextStyle(
-                        color: Colors.black,
-                        // color: Color(0xffd27405),
-                        fontFamily: 'Poppins',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
+                    Container(
+                      // color: Color(0xff1c1c1c),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Public Parks',
+                        style: TextStyle(
+                          // color: Colors.black,
+                          color: Color(0xffd27405),
+                          fontFamily: 'Poppins',
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
-                      textAlign: TextAlign.justify,
                     ),
                     Container(
                       padding: EdgeInsets.all(5.0),
@@ -273,18 +349,24 @@ class _AddisState extends State<Addis> {
                     // row scroll done!
 
                     // churchs and mosques
-                    const Text(
-                      'Historic Churchs and Mosques',
-                      style: TextStyle(
-                        // color: Colors.white,
-                        color: Colors.black,
+                    Container(
+                      // color: Color(0xff1c1c1c),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Historic Churchs and Mosques',
+                        style: TextStyle(
+                          // color: Colors.white,
+                          // color: Colors.black,
 
-                        // color: Color(0xffd27405),
-                        fontFamily: 'Poppins',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
+                          color: Color(0xffd27405),
+                          fontFamily: 'Poppins',
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
-                      textAlign: TextAlign.justify,
                     ),
 
                     Container(
@@ -331,18 +413,24 @@ class _AddisState extends State<Addis> {
                     ),
 
                     // churchs and mosques
-                    const Text(
-                      'Museums',
-                      style: TextStyle(
-                        // color: Colors.white,
-                        color: Colors.black,
+                    Container(
+                      // color: Color(0xff1c1c1c),
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Museums',
+                        style: TextStyle(
+                          // color: Colors.white,
+                          // color: Colors.black,
 
-                        // color: Color(0xffd27405),
-                        fontFamily: 'Poppins',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
+                          color: Color(0xffd27405),
+                          fontFamily: 'Poppins',
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
-                      textAlign: TextAlign.justify,
                     ),
 
                     Container(

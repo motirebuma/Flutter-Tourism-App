@@ -1,7 +1,7 @@
+import 'package:alobawa/screens/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'home_page.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -116,7 +116,7 @@ class _WelcomeState extends State<Welcome> {
                               PageRouteBuilder(
                                 transitionDuration:
                                     const Duration(milliseconds: 500),
-                                pageBuilder: (_, __, ___) => HomePage(),
+                                pageBuilder: (_, __, ___) => HomeScreen(),
                                 transitionsBuilder: (_, animation, __, child) {
                                   return SlideTransition(
                                     position: Tween<Offset>(

@@ -1,7 +1,14 @@
 import 'package:abushakir/abushakir.dart';
 import 'package:alobawa/screens/Addis.dart';
+import 'package:alobawa/screens/Destination.dart';
+import 'package:alobawa/screens/catagories/Eastern.dart';
+import 'package:alobawa/screens/catagories/Northern%20copy%205.dart';
+import 'package:alobawa/screens/catagories/Southern.dart';
+import 'package:alobawa/screens/catagories/Western.dart';
 import 'package:alobawa/screens/menu/calendar.dart';
 import 'package:alobawa/screens/park/park.dart';
+import 'package:alobawa/screens/placesScreen.dart';
+import 'package:alobawa/screens/welcome.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
@@ -33,32 +40,33 @@ class _HomeScreenState extends State<HomeScreen> {
         MaterialPageRoute(builder: (context) => const Addis()),
       );
     }));
+    //! The North
     catagoryWidgets.add(
         WidgetCategoryBox().placeBox('assets/places/north.jpg', 'Northern', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Addis()),
+        MaterialPageRoute(builder: (context) => const TheNorth()),
       );
     }));
-    catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/south.jpg', 'Caltural Southern', () {
+    catagoryWidgets.add(
+        WidgetCategoryBox().placeBox('assets/places/south.jpg', 'Southern', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Addis()),
+        MaterialPageRoute(builder: (context) => const TheSouth()),
       );
     }));
     catagoryWidgets.add(WidgetCategoryBox()
         .placeBox('assets/places/east.jpg', 'Nature of East', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Addis()),
+        MaterialPageRoute(builder: (context) => const TheEast()),
       );
     }));
-    catagoryWidgets.add(
-        WidgetCategoryBox().placeBox('assets/places/north.jpg', 'Northern', () {
+    catagoryWidgets.add(WidgetCategoryBox()
+        .placeBox('assets/places/coffee.jpeg', 'Western', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Addis()),
+        MaterialPageRoute(builder: (context) => TheWest()),
       );
     }));
     catagoryWidgets.add(WidgetCategoryBox()
@@ -72,21 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .placeBox('assets/places/southern.jpg', 'Addis Ababa', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Addis()),
-      );
-    }));
-    catagoryWidgets.add(
-        WidgetCategoryBox().placeBox('assets/places/aa.jpg', 'Addis Ababa', () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Addis()),
-      );
-    }));
-    catagoryWidgets
-        .add(WidgetCategoryBox().placeBox('assets/wal.jpg', 'Festivals', () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Addis()),
+        MaterialPageRoute(builder: (context) => Welcome()),
       );
     }));
 
@@ -116,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           //children inside bottom appbar
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 90),
@@ -136,22 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Color(0xffd27405),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, route.currency);
+                // Navigator.pushNamed(context, route.currency);
               },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.info,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.user,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {},
             ),
           ],
         ),
