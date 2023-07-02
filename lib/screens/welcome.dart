@@ -1,4 +1,4 @@
-import 'package:alobawa/screens/homeScreen.dart';
+import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -116,7 +116,7 @@ class _WelcomeState extends State<Welcome> {
                               PageRouteBuilder(
                                 transitionDuration:
                                     const Duration(milliseconds: 500),
-                                pageBuilder: (_, __, ___) => HomeScreen(),
+                                pageBuilder: (_, __, ___) => OldHomeScreen(),
                                 transitionsBuilder: (_, animation, __, child) {
                                   return SlideTransition(
                                     position: Tween<Offset>(

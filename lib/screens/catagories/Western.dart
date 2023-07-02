@@ -1,5 +1,5 @@
 import 'package:alobawa/screens/Addis.dart';
-import 'package:alobawa/screens/homeScreen.dart';
+import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class _TheWestState extends State<TheWest> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -37,7 +37,7 @@ class _TheWestState extends State<TheWest> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -48,7 +48,7 @@ class _TheWestState extends State<TheWest> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -59,7 +59,7 @@ class _TheWestState extends State<TheWest> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -70,7 +70,7 @@ class _TheWestState extends State<TheWest> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -87,7 +87,9 @@ class _TheWestState extends State<TheWest> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1, // 2 columns
           mainAxisSpacing: 10.0, // Spacing between rows
-          childAspectRatio: 2, // Width/Height rat
+          // childAspectRatio: 2,
+          childAspectRatio: 1.7,
+          //// Width/Height rat
         ),
         itemBuilder: (context, index) {
           return widgetList[index];

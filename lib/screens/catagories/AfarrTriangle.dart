@@ -1,5 +1,5 @@
 import 'package:alobawa/screens/Addis.dart';
-import 'package:alobawa/screens/homeScreen.dart';
+import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class _TheAfarTriangleState extends State<TheAfarTriangle> {
         'lorem ipsum sdfjl sdf the awash park omow mnamn mnam', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -36,7 +36,7 @@ class _TheAfarTriangleState extends State<TheAfarTriangle> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -47,7 +47,7 @@ class _TheAfarTriangleState extends State<TheAfarTriangle> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -58,7 +58,7 @@ class _TheAfarTriangleState extends State<TheAfarTriangle> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 

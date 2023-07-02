@@ -49,6 +49,8 @@ dependencies:
   photo_view: ^0.14.0
   cached_network_image: ^3.2.3
   flutter_rating_bar: ^4.0.0
+  # flutter_staggered_grid_view: ^0.6.2
+  flutter_staggered_grid_view: ^0.4.0
   # google_maps_flutter: ^2.3.0
   # multidex: ^2.0.1
 
@@ -83,6 +85,14 @@ flutter:
     - assets/calendar/
     - assets/currency/
     - assets/places/parks/
+    - assets/catagory/east/
+    - assets/catagory/north/
+    - assets/catagory/west/
+    - assets/catagory/south/
+    - assets/catagory/addis/
+    - assets/catagory/afar/
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

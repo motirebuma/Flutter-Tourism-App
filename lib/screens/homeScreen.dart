@@ -1,19 +1,19 @@
-import 'package:abushakir/abushakir.dart';
-import 'package:alobawa/screens/Addis.dart';
-import 'package:alobawa/screens/Destination.dart';
+// ignore: file_names
+import 'dart:async';
+
 import 'package:alobawa/screens/catagories/Eastern.dart';
-import 'package:alobawa/screens/catagories/Northern%20copy%205.dart';
+import 'package:alobawa/screens/catagories/Northern.dart';
 import 'package:alobawa/screens/catagories/Southern.dart';
 import 'package:alobawa/screens/catagories/Western.dart';
-import 'package:alobawa/screens/menu/calendar.dart';
-import 'package:alobawa/screens/park/park.dart';
-import 'package:alobawa/screens/placesScreen.dart';
-import 'package:alobawa/screens/welcome.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
-import 'package:alobawa/widgets/WidgetPlaceBox.dart';
+import 'package:alobawa/widgets/WidgetDiscover.dart';
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../routes/route.dart' as route;
+import 'Addis.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,18 +23,48 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // catagoryWidgets.add(Text('Widget 1'));
+  int _currentIndex = 0;
+  final List<String> _image = [
+    'assets/catagory/addis/addis.jpg',
+    'assets/catagory/south/omovalley.jpg',
+    'assets/catagory/south/nechsar.jpg',
+    'assets/catagory/north/alnegash.jpg',
+    'assets/catagory/north/lalibela.jpg',
+  ];
+  final List<String> _title = [
+    'Addis Abeba',
+    'Omo Valley',
+    'Nechsar',
+    'Al-Negash',
+    'Lalibela'
+  ];
+  final List<String> _description = [
+    'Addis Abeba is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+    'Omo Valley is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+    'Nechsar is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+    'Al-Negash is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+    'Lalibela is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+  ];
 
   @override
+  void initState() {
+    super.initState();
+    // Set up a timer that will change the content every 3 seconds
+    Timer.periodic(Duration(seconds: 5), (timer) {
+      setState(() {
+        _currentIndex = (_currentIndex + 1) % _image.length;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
-    // Catagory widgets
     List<Widget> catagoryWidgets = [];
 
     // catagoryWidgets.add(widgetCatagoryBox().placeBox('assets/places/aa.jpg', c, route);
     // catagories
     // * Addis Ababa
-    catagoryWidgets.add(WidgetCategoryBox().placeBox(
-        'assets/places/addis.jpg', 'Addis Ababa and its surrounding', () {
+    catagoryWidgets.add(WidgetCategoryBox()
+        .placeBox('assets/catagory/addis/addis.jpg', 'Addis Ababa', () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const Addis()),
@@ -63,133 +93,32 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }));
     catagoryWidgets.add(WidgetCategoryBox()
+        .placeBox('assets/places/east.jpg', 'Afar Triangle', () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const TheEast()),
+      );
+    }));
+    catagoryWidgets.add(WidgetCategoryBox()
         .placeBox('assets/places/coffee.jpeg', 'Western', () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => TheWest()),
       );
     }));
-    catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/coffee.jpeg', 'The Coffee Routes', () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Addis()),
-      );
-    }));
-    catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/southern.jpg', 'Addis Ababa', () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Welcome()),
-      );
-    }));
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        //Floating action button on Scaffold
-        backgroundColor: Color(0xffd27405),
-        onPressed: () {
-          //code to execute on button press
-          HomeScreen();
-        },
-        child: Icon(
-          Icons.home,
-          color: Color(0xff1c1c1c),
-        ), //icon inside button
-      ),
+      backgroundColor: Color(0xff1c1c1c),
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      //floating action button location to left
-
-      bottomNavigationBar: BottomAppBar(
-        //bottom navigation bar on scaffold
-        color: Color(0xff1c1c1c),
-        shape: CircularNotchedRectangle(), //shape of notch
-        notchMargin:
-            5, //notche margin between floating button and bottom appbar
-        child: Row(
-          //children inside bottom appbar
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 90),
-              child: IconButton(
-                icon: Icon(
-                  Icons.calendar_month,
-                  color: Color(0xffd27405),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, route.calendar);
-                },
-              ),
-            ),
-            IconButton(
-              icon: const FaIcon(
-                FontAwesomeIcons.moneyBillTrendUp,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {
-                // Navigator.pushNamed(context, route.currency);
-              },
-            ),
-          ],
-        ),
-      ),
       appBar: AppBar(
-        toolbarHeight: 200,
-        // centerTitle: true,
-        flexibleSpace: FlexibleSpaceBar(
-          background: Image.asset(
-            'assets/appbar.png',
-            fit: BoxFit.cover,
-          ),
-        ),
-        automaticallyImplyLeading: false,
-        //
-        title: Column(
-          children: [
-            Row(
-              children: [
-                Builder(
-                  builder: (BuildContext context) {
-                    return IconButton(
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Color(0xffd27405),
-                        size: 35,
-                      ),
-                      onPressed: () {
-                        Scaffold.of(context).openDrawer();
-                      },
-                      tooltip: MaterialLocalizations.of(context)
-                          .openAppDrawerTooltip,
-                    );
-                  },
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Container(
-                  width: 300,
-                  child: const Text(
-                    'Find your favorite place',
-                    style: TextStyle(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xffd27405),
-                      fontFamily: 'Poppins',
-                    ),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+        // backgroundColor: Color(0xff1c1c1c),
+        backgroundColor: Colors.transparent,
+
+        foregroundColor: Color(0xffd27405),
+        // title: const Text('Home'),
+        centerTitle: true,
       ),
+      // drawer
       drawer: Theme(
         data: Theme.of(context).copyWith(
           // Set the transparency here
@@ -296,49 +225,162 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
-      // Theme(
-      //   data: Theme.of(context).copyWith(
-      //     // Set the transparency here
-      //     // canvasColor: Color.fromARGB(139, 0, 0, 0),
-      //     canvasColor: const Color(0xff1c1c1c),
-      //   ),
-      //   child: BottomNavigationBar(
-      //     items: <BottomNavigationBarItem>[
-      //       BottomNavigationBarItem(
-      //         icon: GestureDetector(
-      //           onTap: null,
-      //           child: const Icon(
-      //             Icons.favorite,
-      //             color: Color(0xffd27405),
-      //           ),
-      //         ),
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: GestureDetector(
-      //           onTap: null,
-      //           child: const Icon(
-      //             Icons.favorite,
-      //             color: Color(0xffd27405),
-      //           ),
-      //         ),
-      //         label: 'Calls',
-      //       ),
-      // BottomNavigationBarItem(
-      //   icon: Icon(Icons.chat),
-      //   label: 'Chats',
-      // ),
-      //     ],
-      //   ),
-      // ),
-      body: GridView.builder(
-        itemCount: catagoryWidgets.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // 2 columns
-        ),
-        itemBuilder: (context, index) {
-          return catagoryWidgets[index];
+// !buttom app bar
+      floatingActionButton: FloatingActionButton(
+        //Floating action button on Scaffold
+        backgroundColor: Color(0xffd27405),
+        onPressed: () {
+          //code to execute on button press
+          HomeScreen();
         },
+        child: Icon(
+          Icons.home,
+          color: Color(0xff1c1c1c),
+        ), //icon inside button
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+      //floating action button location to left
+
+      bottomNavigationBar: BottomAppBar(
+        //bottom navigation bar on scaffold
+        color: Color(0xff1c1c1c),
+        shape: CircularNotchedRectangle(), //shape of notch
+        notchMargin:
+            5, //notche margin between floating button and bottom appbar
+        child: Row(
+          //children inside bottom appbar
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 90),
+              child: IconButton(
+                icon: Icon(
+                  Icons.calendar_month,
+                  color: Color(0xffd27405),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, route.calendar);
+                },
+              ),
+            ),
+            IconButton(
+              icon: const FaIcon(
+                FontAwesomeIcons.moneyBillTrendUp,
+                color: Color(0xffd27405),
+              ),
+              onPressed: () {
+                // Navigator.pushNamed(context, route.currency);
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          // Container(
+          //   // width: MediaQuery.of(context).size.width,
+          //   child: SingleChildScrollView(
+          //     scrollDirection: Axis.horizontal,
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         WidgetDiscoverBox().discoverBox(
+          //             'test',
+          //             'assets/catagory/south/omovalley.jpg',
+          //             'hello friend, hello friend thats lame',
+          //             () {}),
+          //         WidgetDiscoverBox().discoverBox(
+          //             'test',
+          //             'assets/catagory/south/omo.jpg',
+          //             'hello friend, hello friend thats lame',
+          //             () {}),
+          //         WidgetDiscoverBox().discoverBox(
+          //             'test',
+          //             'assets/catagory/south/omovalley.jpg',
+          //             'hello friend, hello friend thats lame',
+          //             () {})
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // const Text(
+          //   'Top Rated',
+          //   style: TextStyle(
+          //       color: Color(0xffd27405),
+          //       fontFamily: 'Poppins',
+          //       fontWeight: FontWeight.w500,
+          //       fontSize: 24),
+          //   textAlign: TextAlign.left,
+          // ),
+          WidgetDiscoverBox().discoverBox(_title[_currentIndex],
+              _image[_currentIndex], _description[_currentIndex], () {}),
+          const Text(
+            'Discover Ethiopia',
+            style: TextStyle(
+                color: Color(0xffd27405),
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+                fontSize: 24),
+          ),
+          Expanded(
+            // child: GridView.builder(
+            //   itemCount: catagoryWidgets.length,
+            //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            //     maxCrossAxisExtent: 300.0, // Maximum width for larger items
+            //     mainAxisSpacing: 10.0, // Spacing between rows
+            //     crossAxisSpacing: 10.0, // Spacing between columns
+            //     childAspectRatio: 1.0, // Width/Height ratio
+            //   ),
+            //   itemBuilder: (context, index) {
+            //     if (index % 2 == 0) {
+            //       // Even index, use the larger item size
+            //       return SizedBox(
+            //         height: 400.0,
+            //         child: catagoryWidgets[index],
+            //       );
+            //     } else {
+            //       // Odd index, use the smaller item size
+            //       return SizedBox(
+            //         height: 200.0,
+            //         child: catagoryWidgets[index],
+            //       );
+            //     }
+            //   },
+            // ),
+            child: GridView.builder(
+              itemCount: catagoryWidgets.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // 2 columns
+                // crossAxisSpacing: 0,
+                mainAxisSpacing: 10.0,
+
+                /// Spacing between rows
+                // crossAxisSpacing: 10.0, // Spacing between columns
+                childAspectRatio: 1.3, // Width/Height rat
+              ),
+              itemBuilder: (context, index) {
+                return catagoryWidgets[index];
+              },
+            ),
+            // child: StaggeredGridView.countBuilder(
+            //   crossAxisCount: 2,
+            //   crossAxisSpacing: 8,
+            //   mainAxisSpacing: 8,
+            //   itemCount: catagoryWidgets.length,
+            //   staggeredTileBuilder: (index) {
+            //     if (index == 0) {
+            //       return StaggeredTile.fit(1);
+            //     } else {
+            //       return StaggeredTile.extent(
+            //           1, 2 * MediaQuery.of(context).size.width / 3);
+            //     }
+            //   },
+            //   itemBuilder: (context, index) => catagoryWidgets[index],
+            // ),
+          ),
+        ],
       ),
     );
   }

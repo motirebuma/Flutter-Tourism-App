@@ -1,5 +1,5 @@
 import 'package:alobawa/screens/Addis.dart';
-import 'package:alobawa/screens/homeScreen.dart';
+import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class _TheEastState extends State<TheEast> {
         'harar the living museums bla bla bla.. good bye frined', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -36,7 +36,7 @@ class _TheEastState extends State<TheEast> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -46,17 +46,17 @@ class _TheEastState extends State<TheEast> {
         'babile the mother of elephants sdfjsafjdl mnaba nw yalkew ayii..', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
     widgetList.add(WidgetDestinationBox().DestinationBox(
         'Sofumar Cave',
-        'assets/places/north.jpg',
-        'if we win if we rule lab lab wuha in every bowanbuwa, we also afford jalati for all people for free',
+        'assets/catagory/east/sofumar.jpg',
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
     return Scaffold(
@@ -74,7 +74,7 @@ class _TheEastState extends State<TheEast> {
           // crossAxisSpacing: 0,
           mainAxisSpacing: 10.0, // Spacing between rows
           // crossAxisSpacing: 10.0, // Spacing between columns
-          childAspectRatio: 2, // Width/Height rat
+          childAspectRatio: 1.7, // Width/Height rat
         ),
         itemBuilder: (context, index) {
           return widgetList[index];

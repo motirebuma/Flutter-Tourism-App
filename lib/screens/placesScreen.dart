@@ -1,5 +1,5 @@
 import 'package:alobawa/screens/Addis.dart';
-import 'package:alobawa/screens/homeScreen.dart';
+import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class _PlacesScreenState extends State<PlacesScreen> {
         'Amazon', 'assets/wal.jpg', 'lorem ipsum sdfjl sdf', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -34,7 +34,7 @@ class _PlacesScreenState extends State<PlacesScreen> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -45,7 +45,7 @@ class _PlacesScreenState extends State<PlacesScreen> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
@@ -56,7 +56,7 @@ class _PlacesScreenState extends State<PlacesScreen> {
         () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
       );
     }));
 
