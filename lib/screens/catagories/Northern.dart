@@ -1,6 +1,8 @@
 import 'package:alobawa/screens/Addis.dart';
 import 'package:alobawa/screens/homeScreenOld.dart';
+import 'package:alobawa/screens/park/park.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
+import 'package:alobawa/widgets/WidgetDiscoveryBody.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
 
@@ -24,11 +26,20 @@ class _TheNorthState extends State<TheNorth> {
         'assets/catagory/north/lalibela.jpg',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/lalibela.jpg',
+              'Lalibela',
+              89,
+              88,
+              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+              '+25194745436'),
+        ),
+      );
+      // null;
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
@@ -36,11 +47,19 @@ class _TheNorthState extends State<TheNorth> {
         'assets/catagory/north/axum.jpg',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/axum.jpg',
+              'Axum',
+              89,
+              88,
+              'axum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+              '+25194745436'),
+        ),
+      );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(

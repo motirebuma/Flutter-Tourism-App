@@ -17,7 +17,7 @@ class widgetPlaceBox {
         //     offset: Offset(0, 3),
         //   ),
         // ],
-        color: Colors.black,
+        color: Colors.grey.shade300,
       ),
       child: GestureDetector(
         // onTap: () {

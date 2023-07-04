@@ -330,11 +330,11 @@ class _HomeScreenState extends State<HomeScreen> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // 2 columns
                 // crossAxisSpacing: 0,
-                mainAxisSpacing: 2,
+                mainAxisSpacing: 1,
 
                 /// Spacing between rows
                 // crossAxisSpacing: 10.0, // Spacing between columns
-                childAspectRatio: 1.4, // Width/Height rat
+                childAspectRatio: 1.2, // Width/Height rat
               ),
               itemBuilder: (context, index) {
                 return catagoryWidgets[index];

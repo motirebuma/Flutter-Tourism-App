@@ -127,8 +127,8 @@ class _AddisState extends State<Addis> {
 
                   ListView(
                     shrinkWrap: true,
-                    padding: EdgeInsets.all(2.0),
-                    children: <Widget>[
+                    padding: const EdgeInsets.all(2.0),
+                    children: const <Widget>[
                       SizedBox(
                         height: 25.0,
                       ),
@@ -140,7 +140,7 @@ class _AddisState extends State<Addis> {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       'Public Parks',
                       style: TextStyle(
                         // color: Colors.black,
@@ -153,7 +153,7 @@ class _AddisState extends State<Addis> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     // color: Colors.white,
                     height: 250,
                     child: SingleChildScrollView(
@@ -163,11 +163,12 @@ class _AddisState extends State<Addis> {
                           widgetPlaceBox().placeBox(
                               'assets/places/parks/entoto.jpg', 'Entoto Park',
                               () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Park()),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => const Park()),
+                            // );
+                            null;
                           }),
                           const SizedBox(width: 15),
                           widgetPlaceBox().placeBox(
