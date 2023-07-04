@@ -14,7 +14,7 @@ class WidgetDestinationBox {
               image: AssetImage(img),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(15),
             border: Border.all(
               width: 1,
               color: Color(0xffd27405),

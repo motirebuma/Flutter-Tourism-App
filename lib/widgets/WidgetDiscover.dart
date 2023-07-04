@@ -10,7 +10,7 @@ class WidgetDiscoverBox {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 250,
+          // height: 250,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(img),

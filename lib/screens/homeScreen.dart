@@ -11,9 +11,11 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../lang/localization_checker.dart';
 import '../routes/route.dart' as route;
 import 'Addis.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     // Set up a timer that will change the content every 3 seconds
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    Timer.periodic(Duration(seconds: 4), (timer) {
       setState(() {
         _currentIndex = (_currentIndex + 1) % _image.length;
       });
@@ -108,15 +110,41 @@ class _HomeScreenState extends State<HomeScreen> {
     }));
 
     return Scaffold(
-      backgroundColor: Color(0xff1c1c1c),
+      backgroundColor: const Color(0xff1c1c1c),
 
       appBar: AppBar(
-        // backgroundColor: Color(0xff1c1c1c),
-        backgroundColor: Colors.transparent,
-
+        backgroundColor: const Color(0xff1c1c1c),
+        // backgroundColor: Colors.white,
+        // backgroundColor: Colors.transparent,
+        elevation: 0,
         foregroundColor: Color(0xffd27405),
         // title: const Text('Home'),
-        centerTitle: true,
+        // centerTitle: true,
+        // title: WidgetDiscoverBox().discoverBox(_title[_currentIndex],
+        //     _image[_currentIndex], _description[_currentIndex], () {}),
+        toolbarHeight: 270,
+        flexibleSpace: WidgetDiscoverBox().discoverBox(_title[_currentIndex],
+            _image[_currentIndex], _description[_currentIndex], () {}),
+        leading: Column(
+          children: [
+            Builder(
+              builder: (BuildContext context) {
+                return Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.menu,
+                      size: 35,
+                    ),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       // drawer
       drawer: Theme(
@@ -127,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Drawer(
           child: ListView(
             // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
+            // padding: EdgeInsets.zero,
             children: [
               const SizedBox(
                 height: 150,
@@ -191,8 +219,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color(0xffd27405),
                   size: 18,
                 ),
-                title: const Text(
-                  'Change Language',
+                title: Text(
+                  'change_language'.tr(),
                   style: TextStyle(
                     color: Color(0xffd27405),
                     fontSize: 18,
@@ -200,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  LocalizationChecker.changeLanguge(context);
                 },
               ),
               ListTile(
@@ -209,9 +237,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color(0xffd27405),
                   size: 18,
                 ),
-                title: const Text(
-                  'About',
-                  style: TextStyle(
+                title: Text(
+                  'about'.tr(),
+                  style: const TextStyle(
                     color: Color(0xffd27405),
                     fontSize: 18,
                     fontFamily: 'Poppins',
@@ -223,58 +251,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-        ),
-      ),
-// !buttom app bar
-      floatingActionButton: FloatingActionButton(
-        //Floating action button on Scaffold
-        backgroundColor: Color(0xffd27405),
-        onPressed: () {
-          //code to execute on button press
-          HomeScreen();
-        },
-        child: Icon(
-          Icons.home,
-          color: Color(0xff1c1c1c),
-        ), //icon inside button
-      ),
-
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      //floating action button location to left
-
-      bottomNavigationBar: BottomAppBar(
-        //bottom navigation bar on scaffold
-        color: Color(0xff1c1c1c),
-        shape: CircularNotchedRectangle(), //shape of notch
-        notchMargin:
-            5, //notche margin between floating button and bottom appbar
-        child: Row(
-          //children inside bottom appbar
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 90),
-              child: IconButton(
-                icon: Icon(
-                  Icons.calendar_month,
-                  color: Color(0xffd27405),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, route.calendar);
-                },
-              ),
-            ),
-            IconButton(
-              icon: const FaIcon(
-                FontAwesomeIcons.moneyBillTrendUp,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {
-                // Navigator.pushNamed(context, route.currency);
-              },
-            ),
-          ],
         ),
       ),
       body: Column(
@@ -314,8 +290,8 @@ class _HomeScreenState extends State<HomeScreen> {
           //       fontSize: 24),
           //   textAlign: TextAlign.left,
           // ),
-          WidgetDiscoverBox().discoverBox(_title[_currentIndex],
-              _image[_currentIndex], _description[_currentIndex], () {}),
+          // WidgetDiscoverBox().discoverBox(_title[_currentIndex],
+          //     _image[_currentIndex], _description[_currentIndex], () {}),
           const Text(
             'Discover Ethiopia',
             style: TextStyle(
@@ -354,11 +330,11 @@ class _HomeScreenState extends State<HomeScreen> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // 2 columns
                 // crossAxisSpacing: 0,
-                mainAxisSpacing: 10.0,
+                mainAxisSpacing: 2,
 
                 /// Spacing between rows
                 // crossAxisSpacing: 10.0, // Spacing between columns
-                childAspectRatio: 1.3, // Width/Height rat
+                childAspectRatio: 1.4, // Width/Height rat
               ),
               itemBuilder: (context, index) {
                 return catagoryWidgets[index];

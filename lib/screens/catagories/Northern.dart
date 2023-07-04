@@ -104,9 +104,10 @@ class _TheNorthState extends State<TheNorth> {
       backgroundColor: const Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('The North'),
+        title: const Text('The North'),
         backgroundColor: const Color(0xff1c1c1c),
-        foregroundColor: Color(0xffd27504),
+        foregroundColor: const Color(0xffd27504),
+        elevation: 0,
       ),
       body: GridView.builder(
         itemCount: widgetList.length,

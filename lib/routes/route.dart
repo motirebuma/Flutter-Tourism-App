@@ -2,11 +2,13 @@ import 'package:alobawa/screens/Addis.dart';
 import 'package:alobawa/screens/Home.dart';
 import 'package:alobawa/screens/homeScreen.dart';
 import 'package:alobawa/screens/homeScreenOld.dart';
-import 'package:alobawa/screens/mapShow.dart';
+// import 'package:alobawa/screens/mapShow.dart';
 import 'package:alobawa/screens/menu/calendar.dart';
 import 'package:alobawa/screens/menu/currencyConverter.dart';
 // import 'package:alobawa/screens/menu/currencyScreen.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/googleMap.dart';
 // import 'package:trusim_app/pages/Addis.dart';
 // import 'package:trusim_app/pages/mapTest.dart';
 // import 'package:trusim_app/pages/menu/about.dart';
@@ -88,7 +90,7 @@ Route<dynamic> controller(RouteSettings settings) {
 
     // googleMap
     case googleMap:
-      return MaterialPageRoute(builder: (context) => const MapSample());
+      return MaterialPageRoute(builder: (context) => const MapScreen());
 
     default:
       throw ('Page not found!');

@@ -1,0 +1,11 @@
+{
+    "test": "test . . .",
+    "welcome": "welcome..",
+    "how_are_you": "how are you?",
+    "page_two": "page two",
+    "page_three": "page there",
+    "btnGotoScreenTwo": "screen two",
+    "btnGotoScreenThree": "screen three",
+    "change_language" : "change language",
+    "about": "About"
+}

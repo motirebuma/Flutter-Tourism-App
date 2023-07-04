@@ -296,41 +296,6 @@ class _OldHomeScreenState extends State<OldHomeScreen> {
           ),
         ),
       ),
-
-      // Theme(
-      //   data: Theme.of(context).copyWith(
-      //     // Set the transparency here
-      //     // canvasColor: Color.fromARGB(139, 0, 0, 0),
-      //     canvasColor: const Color(0xff1c1c1c),
-      //   ),
-      //   child: BottomNavigationBar(
-      //     items: <BottomNavigationBarItem>[
-      //       BottomNavigationBarItem(
-      //         icon: GestureDetector(
-      //           onTap: null,
-      //           child: const Icon(
-      //             Icons.favorite,
-      //             color: Color(0xffd27405),
-      //           ),
-      //         ),
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: GestureDetector(
-      //           onTap: null,
-      //           child: const Icon(
-      //             Icons.favorite,
-      //             color: Color(0xffd27405),
-      //           ),
-      //         ),
-      //         label: 'Calls',
-      //       ),
-      // BottomNavigationBarItem(
-      //   icon: Icon(Icons.chat),
-      //   label: 'Chats',
-      // ),
-      //     ],
-      //   ),
-      // ),
       body: GridView.builder(
         itemCount: catagoryWidgets.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

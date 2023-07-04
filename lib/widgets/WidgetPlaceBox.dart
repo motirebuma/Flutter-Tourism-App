@@ -11,13 +11,13 @@ class widgetPlaceBox {
         borderRadius: BorderRadius.circular(10),
         // boxShadow: [
         //   BoxShadow(
-        //     color: Colors.grey.withOpacity(0.5),
+        //     color: Color.fromARGB(255, 197, 155, 103).withOpacity(0.5),
         //     spreadRadius: 5,
         //     blurRadius: 7,
         //     offset: Offset(0, 3),
         //   ),
         // ],
-        color: Colors.white,
+        color: Colors.black,
       ),
       child: GestureDetector(
         // onTap: () {
@@ -64,7 +64,7 @@ class widgetPlaceBox {
                     fontSize: 15.0,
                     fontWeight: FontWeight.w600,
                     // color: Color(0xffd27405),
-                    color: Colors.black,
+                    color: Color(0xffd27504),
                     fontFamily: 'Poppins',
                   ),
                   textAlign: TextAlign.center,
