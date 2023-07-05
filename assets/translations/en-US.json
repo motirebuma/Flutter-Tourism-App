@@ -7,5 +7,151 @@
     "btnGotoScreenTwo": "screen two",
     "btnGotoScreenThree": "screen three",
     "change_language" : "change language",
-    "about": "About"
-}
+    "about": "About",
+
+             "comment0" :"//===============home page=========================",
+
+    "discover_ethiopia": "Discover Ethiopia",
+    "addis_ababa" : "Addis Ababa",
+    "northern" : "Historic North",
+    "southern" : "Cultural South",
+    "east": "Nature of East ",
+    "afar": "The Afar Triangle ",
+    "west": "The Nature of Weast ",
+
+               "comment1" :"//===============addis ababa and its surrounding =========================",
+
+    "dis_addis": "Addis Ababa, the capital city of Ethiopia, is a vibrant and bustling metropolis located in the eastern part of Africa. Known as the diplomatic and economic hub of the country, it is situated at an elevation of around 2,400 meters (7,874 feet) in the highlands ",
+    "park": "Public Park",
+    "entoto ": "Entoto Park ",
+    "sheger_park ": "Sheger Park ",
+    "unity ": "Unity Park ",
+    "church_mosque": "HIstoric Church and Mosques ",
+    "mikael_church": "Washa Mikael Church ",
+    "maryam_church ": "Etoto Maryam Church ",
+    "anwar": "Anwar Mosque",
+    "museum": "Museums ",
+    "addis_ab_museum" :"Addis Ababa Museum",
+    "science_mesuem ": "Art and Science Museum ",
+    "national_museum ": "The National Museum of Ethiopia ",
+    "dis_entoto ": " Entoto Park, located in Addis Ababa, Ethiopia, is a captivating natural haven that offers a serene escape from the bustling city life. Nestled in the breathtaking Entoto Mountains, the park showcases the remarkable beauty of Ethiopia's highland landscape",
+    "dis_sheger_park" :"Sheger Park in Ethiopia is a captivating urban oasis located in Addis Ababa. Spanning vast acres of lush greenery, the park offers a serene escape from the city's hustle and bustle. It features well-manicured gardens, scenic pathways, and a beautiful lake for paddle boating and birdwatching. The park caters to families with its playgrounds and picnic areas, while also hosting community events and promoting environmental sustainability. Sheger Park is a vibrant celebration of Ethiopia's natural beauty and cultural heritage, providing a peaceful retreat for locals and tourists alike.",
+    "dis_unity": "Unity Park, situated in Addis Ababa, Ethiopia, is a remarkable cultural and historical landmark that invites visitors to explore the nation's rich heritage. Established within the magnificent grounds of the Grand Palace, the park offers a unique blend of lush gardens, grand architecture, and significant historical sites. As a symbol of Ethiopia's commitment to unity and inclusivity, the park showcases diverse aspects of the country's past, with sections dedicated to various epochs and emperors. Visitors can marvel at beautifully restored buildings, museums, and exhibitions, providing a comprehensive journey through Ethiopia's storied past. Unity Park stands as a testament to the nation's cultural diversity and serves as a space for education, appreciation, and national pride.",
+    "dis_entot_maryam" :"Entoto Maryam Church/ Entoto St. Marry Zion/ church is one of the oldest church in the suburb of Addis Ababa which was founded by 1877/1885. The church is considered to be the crown of Entoto Mountain and has a best vantage point of Addis Ababa. The church octagonal in shape is an attractive to watch. The exterior part is decorated with pastel railing painted glass panels and wooden curving in a patterns cut crosses. The entire wall is constructed from chiseled stone. The interior of the church is arranged into three-fold division of concentric chamber. There is a museum right next to the church where some of the personal belongings of Emperor Menelik II and Empress Taitu are displayed for visitors to see. Some of the historical items include traditional clothes, crowns of Emperor Menelik II and Empress Taitu, their royal bed, different jewels owned by the royal family, and a mirror presented as a gift from Queen Victoria to Empress Taitu of Ethiopia.",
+    "dis_anwar":"Located in one of the busy and crowded parts of Addis Ababa; Mercato, Anwar mosque is the largest and one of the oldest mosques or masjid in Addis Ababa. The mosque is believed to be constructed by the year 1922. The masjid has nice architecture with white and green colors.",
+    "dis_mikael_church":"One of the best but underrated rock-hewn churches at the nose of Addis Ababa is Washa Mikael rock-hewn church. Washa Mikael rock-hewn church is chiseled out of a huge single rock and aged more than one thousand six hundred years old. The parish is dedicated to the arc angel St. Michael. If you are a MICE tourist in Addis Ababa, this place is a worth visit to have a glimpse of the rock-hewn churches of Lalibela or the churches in the Gheralta Mountains.",
+    "dis_addis_museum":"Addis Ababa museum is founded in Addis’ centenary in 1986. The museum keeps candid portraits of the redoubtable Empress Taitu, rakish Lij Iyasu, and the very beautiful Empress Zewditu, along with pictures of the capital in its infancy.There’s also a ‘first-in-Ethiopia’ room, with pictures of Menelik with Bede Bentley in Addis Ababa’s first motor car (1907) and the first telephone in Ethiopia. This was brought from Italy by Ras Makonnen in 1890, and it’s said that local priests when they first heard the disembodied voices, thought telephones the work of demons.",
+    "dis_science_museum":"The Art and Science Museum in Ethiopia is a captivating institution that seamlessly blends the worlds of creativity and innovation. Located in the heart of the capital city, Addis Ababa, the museum showcases a diverse range of artistic masterpieces and scientific marvels. Its art galleries exhibit works by both local and international artists, spanning various genres and mediums, allowing visitors to appreciate the richness and depth of Ethiopian artistic expression. On the scientific front, the museum houses interactive exhibits and displays that highlight groundbreaking discoveries and advancements across different scientific disciplines.",
+    "dis_national_meseum":"The national museum of Ethiopia is probably one of the standout museums in sub-Saharan African in terms of its numerous and priceless collections. Housed the famous 3.2 million year skeleton lucy, the museum keeps important paleontological, historical, and cultural artifacts. The museum is subdivided into four main sections. The underground or the basement section is reserved for the paleontological discoveries of mankind and some amazing extinct creatures. The ground floor focuses on the pre-Aksumite, Aksumite, Solomonic, and Gonderian periods.",
+    
+    
+              "comment2" :"//===============for Historic North=========================",
+
+    "north":"The North",
+    "lalibela":"Lalibela",
+    "dis_lalibela":"Comprising eleven churches and two chapels, Ethiopia’s labyrinthine ‘New Jerusalem’, excavated by King Lalibela in the 12th century and still in active use today, has been dubbed the “Eighth Wonder of the World”. Hand-carved into the rock flake by painstaking flake, a process that would have required around 40,000 man-years to complete, Lalibela represents the apex of an Ethiopian church-excavating tradition that dates to the arrival of Christianity circa 350 AD.",
+    "axum":"Axum",
+    "dis_axum":"A UNESCO World Heritage site since 1980, Aksum is ‘Sacred’ as Jerusalem, old as Rome and historical as Constantinople, is an exceptional place in Ethiopia. Considered the beacon of Ethiopian Christianity, Axum is the mirror of the glorious period of Ethiopia. It served as the capital of the Aksumite Kingdom, which was the dominant trade entity in the Horn of Africa for over a millennium prior to the rise of Islam, stretching from the Sudanese Nile across the Red Sea to Yemen. Ruined palaces, obelisks, mausoleums, ruined churches, megalithic erected stones, coins, and manuscripts witness the golden period of the Aksumite Empire. The importance of the city is much elevated as it houses the most valuable and sacred relics of the tablet of Mosses or the arks of the covenant and as the place where one of the ‘Three Wise Men’ buried here.",
+    "Gondar":"Gondar",
+    "dis_gondar":"Dubbed the Camelot of Africa, the city of Gondar — the capital of Ethiopia from 1636 until the mid 19th century — combines a modern veneer with an architectural sensibility harking back to the Middle Ages. The city’s physical and architectural centerpiece is Fasil Ghebbi, a stone-walled Royal Compound containing half a dozen fairytale castles including the three-story original built by Emperor Fasil in the 1630s. The Fasil Ghebbi UNESCO World Heritage Site also incorporates several more remote constructions, most notably the Church of Debre Berhan Selassie, with its beautifully painted interior.",
+    "geraltha":"Geraltha",
+    "dis_geraltha":"Hidden away in the mountains like ancient treasures, the churches in Gheralata are described as ‘’ the greatest of the historical-cultural heritage of the Ethiopian people’’. The Gheralta Mountains chain is found deep within the northern high plateau of the Tigray region. The geography of the Gheralta range is one of the most striking landscapes in all of Ethiopia. It’s picturesque setting, dazzling heights, age-old rock painting churches from the middle ages make it one of the premium destinations to be explored.",
+    "alnegash":"Al-Negash",
+    "dis_alnegash":"The town of Negash or sometimes referred to as Al Nejash is Africa’s first Muslim settlement. During the prophet Mohammed period when the Quraysh Arab Merchant chases the prophet and his family, the prophet advised his daughter Rukiya and her husband Uthman along with their 12 companions make their journey to Ethiopia. The then king of Ethiopia Sheltered them and awarded them a permanent residence to live in. Lately, the prophet’s daughter along with her companions died and buried in the historical mosque of AlNejash.",
+    "tana":"Tana",
+    "dis_tana":"A mesmerizing inland sea fringed by lush tropical vegetation, the 3,156 km² Lake Tana is most easily explored from Bahir Dar, a well-equipped port city that doubles as the capital of the Amhara Region. The source of the Blue Nile, Tana was known to the ancient Egyptians as Coloe, while the ancient Greeks extolled it as the ‘copper-tinted… jewel of Ethiopia’. In June 2015, Lake Tana became the centerpiece of a 5,000 km² UNESCO biosphere reserve.",
+    "seimen_mountains":"Seimen Mountains",
+    "dis_seimen_mountains":"Ethiopia’s premier trekking and walking destination, the 412km2 Simien Mountains National Park was inscribed as a Natural World Heritage Site in 1979, whereupon UNESCO lauded it as “one of the world’s most spectacular landscapes, with jagged mountain peaks deep valleys and sharp precipices dropping some 1,500m”. In addition to the splendid scenery and hiking opportunities, the Afromontane meadows and moorlands of the upper Simiens also form one of Ethiopia’s most important biodiversity hotspots, populated by an alluring wealth of endemic plants and animals including Walia ibex, gelada baboon, and Ethiopian wolf.",
+
+    
+              "comment3" :"//===============for cultural south=========================",
+
+    "south":"Cultural South",
+    "omo_park":"Omo National Park",
+    "dis_omo":"Omo National Park is where one can be accustomed to a variety of mammal species with an enormous number in a glance in plain areas of the park. The Omo River is that life emanates over also tranquil the real nature. Unspoiled nature, an unspoiled culture where the authentic colors of nature twinkle. The park arguably holds one of the best wildlife concentrations in the country. . Some of the common wild animals that are found within the park are Common Eland, Buffalo, Elephant, Cheetah, Lion, Giraffe, Topi/ Tiang, African Wild Dog, and Hippopotamus. The bird species include Eastern Gray plantain eater, Yellow Bill, Brown Parrot, Dark Chant Goshawk, Sppoted ticknee, Verraux’s Eagle Owl, Starling Spices.",
+    "nechsar":"Nechsar National Park",
+    "dis_nechsar":"Considered more as a point of departure for the southern extremities of Ethiopia, including the Omo Valley, the city of Arba Minch’s is full of natural wonder and beauty. The city which nestled on the shores of Abaya Lake got its name from the numerous springs that feed a groundwater forest, and the Kulfo River, which drains into Lake Chamo. The area is rich in many tiny springs that bubble up from the ground. You can see many of them as you hike through Nechisar National Park. Abra Minch sits on the edge of Nech Sar National Park, which houses Lake Chamo and Abaya, the second biggest by surface area in Ethiopia, as well as beautiful mountain landscapes and forests, including God’s Bridge, a mountainous area of dense acacia scrub separating the two lakes.",
+    "dorze":"Dorze Village",
+    "dis_dorze":"Dorze people are a small Omotic-speaking ethnic group belonging to the larger Afro-Asiatic language family living in the Gamo Highlands of the southern region of Ethiopia. The Dorze people are one of the must-visit sites and peoples in this part of Ethiopia. They have an estimated population of about 30.000 people living mainly in the villages near the cities of Chencha and Arba Minch, in the Semien Omo Zone of the Southern Nations, Nationalities, and Peoples Region. Their residence stretches from the Omo River banks to the highlands over Lake Abaya.",
+    "konso":"Konso Cultural landscape",
+    "dis_konso":"A UNESCO World Heritage Site since 2011, the Konso Cultural Landscape is named after its agriculturist inhabitants, who have molded their 230km2 homeland of semi-arid hills into productive agricultural land. A striking feature of Konso is the ancient hilltop paleta (terrace and walled villages) – strange hobbit-warrens towered over by generation poles felled from a sacred forest, and studded with curvaceous thatched community houses. The Konso are also renowned for their waka grave-markers, anthropomorphic hardwood statues carved to mimic the deceased, and for their communally constructed reservoirs.",
+
+
+
+
+
+
+
+
+
+                "comment4" :"//===============for nature of east=========================",
+
+
+    "harar":"Harar:The living Museum",
+    "dis_harar":"With its 368 alleyways squeezed into just 1 sq.km., Harar is believed to be the fourth holiest city after Mecca, Medina, and Jerusalem. The 82 mosques and 102 shrines within the fortified city formed the largest concentration of mosques in the world. Noted for being a center of Muslim scholarship and commerce, it once issued its own currency. The city’s lively markets and unique gey gar (city houses) are relicts of the many centuries when Harar served as the most important trade emporium in the Horn of Africa, linking the ports of the Somali coast to the fertile Ethiopian interior. Harar Jugol was inscribed as a UNESCO, World Heritage Site in 2006. Awarded the UNESCO Cities for Peace Prize in 2002, Harar is a delightful and welcoming city to explore on foot, its winding labyrinth of alleys leading to busy market places where colorfully-draped local women sell deliciously juicy tropical fruits, pastel-painted cafes brewing coffee plucked from the surrounding hills, and craftspeople such as cotton traditions weavers, jewelers and bookbinders.",
+    "bale_mountains":"Bale Mountains",
+    "dis_bale":"Ethiopia’s most important biodiversity hotspot, Bale Mountains National Park supports a rich mosaic of high-altitude habitats including lush evergreen forest, stands of giant bamboo, pastel-shaded moorland, and sheltered river valleys swathed in fragrant juniper-hagenia woodland. Nominated as a tentative UNESCO Natural World Heritage Site in 2009, the park is the most important stronghold to three endemic large mammal species – the charismatic Ethiopian wolf, handsome mountain nyala, and delightful Bale monkey – while its incredible avifauna is reflected by the African Birding Club having listed it as one of the continent’s top five birding hotspots.",
+    "babile":"Babile Elephant Sanctuary",
+    "dis_babile":"Extending over almost 7,000 square kilometers to the southeast of Harar, Babile Elephant Sanctuary is a vast and spectacular reserve comprising wide gorges flanked by open plains, rocky outcrops, meandering river beds, and, in the south and the east, a drier almost-desert like landscape. Babile is home to Africa’s most north-easterly population of elephants, which some authorities assign to a unique race Loxodonta africana orleansi, endemic to the Horn of Africa.",
+    "sofumar":"Sofumar Cave",
+    "dis_sofumar":"Sof Omar Cave, located in Ethiopia, is a breathtaking natural wonder that captures the imagination of all who visit. Situated in the Bale Zone, this expansive underground labyrinth is one of the longest caves in Africa, stretching over 15 kilometers in length. The cave system boasts a fascinating geological formation, with soaring chambers, intricate stalactites, and an underground river that meanders through its depths. Beyond its geological marvels, Sof Omar Cave holds cultural significance as well. It has served as a sacred site for centuries, attracting pilgrims who come to pay homage to its spiritual history.",
+   
+
+               "comment5" :"//===============for afar triangle =========================",
+
+    "awash_doho":"Awash Park and Doho Hotspring",
+    "dis_awash_doho":"Awash National Park protects a semiarid tract of Rift Valley floor inhabited by dry-country antelope such as the handsome Beisa oryx and magnificent spiral-horned greater kudu. A bird checklist of almost 500 species includes Arabian bustard, African swallow-tailed kite, northern carmine bee-eater, Abyssinian roller, and the endemic yellow-throated serin and near-endemic rock chat. Scenic highlights include the spectacular crater of Fantelle Volcano and peculiar Lake Beseka set amidst stark black volcanic rubble at its base, as well as the surging waterfall at the head of the Awash Gorge and a field of palm-lined hot springs regularly frequented by Hamadryas baboons. ",
+    "denakil":"Denakil Depression",
+    "dis_denakil":"Set at the juncture of three tectonic plates, the Danakil is one of the world’s lowest-lying places, set mostly below sea level, and it officially ranks as the hottest inhabited place on earth, with an average daily maximum of 41°C. Much of the region comprises sun-cracked salt-flats that stretch like blinding-white crazy paving towards a shimmering flat horizon. However, the high level of tectonic activity means that more than 30 active volcanoes protrude from this stretch Great Rift Valley floor. These include the iconic Erta Ale, which has hosted a permanent lava flow since the late 19th century, and the Dallol Crater with its sulfurous pools enclosed by strange pastel-hued crystalline formations.",
+    "hadar":"paleontological Site of Hadar",
+    "dis_hadar":"Hadar is one of the iconic places of Ethiopia with paleontological discoveries. The Hadarpaleontological discoveries include partial skeletons of Australopithecus afarensis, a key species in human evolution. Major paleontological work began at Hadar in the early 1970s and was led by the American anthropologist Donald Johanson. His team discovered a 40-percent-complete female skeleton of Australopithecus afarensis that became popularly known as Lucy. Dated to 3.2 million years ago, the remains provided further evidence that, in human evolution, walking on two legs (bipedalism) preceded increased brain size. The pelvis and leg bones indicate upright posture, but the skull bones reveal a limited cranial capacity similar to that of modern chimpanzees. The Australopithecus afarensis-bearing levels at Hadar range from 3.4 to 2.9 million years old and include more than 200 fossils from a single site (Afar Locality 333), representing at least nine adults and four juveniles deposited at the same time. The site has also yielded the earliest known remains of the human genus, Homo, which dates to 2.3 million years ago, along with some of the earliest known evidence of tool use.",
+    "alalobed":"Alalobed Hot spring",
+    "dis_alalobed":"Allolabad is dotted with steam vents and small craters of hot mud and hissing gases, but most beautiful are several pools of hot water. These pools have an unusual, deep green, blue and yellow color. They are incredibly deep and are filled with hot, steaming water. In one pool there is observed nearly constant geyser – Allallobeda Spouter, which often is 6 m tall but in rare cases – even 30 m tall. The surface of the water in this pool is 97°C hot. There is one more geyser in another spring – it is just 0.3 m tall. Some more springs are pulsating, sometimes boiling more intensely. Further to the north-west, there are remnants of an earlier, extinct geothermal field.",
+             
+               "comment6" :"//===============for western =========================",  
+
+    "jimma":"Jimma",
+    "dis_jimma":"The capital of a coffee-producing area, Jimma is a large, lively city blessed with excellent tourist facilities and a warm location in the fertile western highlands. The town is named after the 19th-century Islamic kingdom of Jimma, which lay at the meeting point of several trade routes. The last autonomous ruler of Jimma was King Abba Jiffar, whose impressive palace at Jiren, on the outskirts of the modern city, has been restored with partial funding from UNESCO. Other attractions include the daily central market, the ethnographic displays at the Jimma Museum, a nearby patch of forest inhabited by the spectacular colobus monkey, and out-of-town Lake Boye with its resident hippos.",
+    "gambella_park":"Gambella National Park",
+    "dis_gambella_park":"Ethiopia’s largest national park extends over 5,060km2 of Gambella Regional State in the low-lying far west. It is bordered to the north by the Baro River, a wide tributary of the Blue Nile navigable all the way to its confluence with the White Nile at Khartoum. Gambella National Park is at its most alluring between March and June, when Africa’s second-largest antelope migration, an estimated 1.2 million white-tailed kob, crosses into Ethiopia from South Sudan. The park is also a stronghold for the endangered Nubian giraffe, localized antelope such as Nile lechwe, Lelwel hartebeest, and tiang, relict populations of lion, leopard, buffalo, and elephant, and the largest terrestrial patas monkey.",
+    "kafa":"Kafa Biosphere Reserve",
+    "dis_kafa":"The largest and most accessible of three UNESCO-recognised biosphere reserves in Ethiopia’s western highlands, the 7,600km2 Kafa Biosphere Reserve is the sole home of many coffee varieties that still grow wild in the region. The reserve incorporates large tracts of montane rainforest, an important reserve of sustainable forest products such as forest cardamom, forest pepper, and honey.",
+    "chebera_churchura":"Chbera Churchura National Park",
+    "dis_chebera":"Chebera Churchura national park is found on the western side of the central Omo Gibe basin, in between the Dawro zone and Konta Special Woreda of the SNNPRS, Ethiopia. The Park is fortunate in possessing numerous rivers and streams and four small creator lakes (Keriballa, Shasho, Koka) which are the reason for the rich wildlife resources of the area. So far, 37 larger mammals and 237 species of birds have been recorded in the different habitats (Highland & Riverine forest and savanna and bush lands) of the park. White-cliff chat, banded-barbet, wattled ibis, black-headed forest Oriole, and thick-billed Raven are endemic birds for the country. Common mammals include the African elephant, hippopotamus, Cape buffalo, lion, and leopard. ",
+    "wonchi":"Wonchi Crater Lake",
+    "dis_wonchi":"An extinct volcano, Mount Wenchi rises to 3,386m and the Afroalpine moorland of its upper slopes, studded with relict patches of natural forest, can be accessed along a 4×4 road connecting the towns of Ambo and Woliso. The densely cultivated caldera encloses a large and beautiful crater lake and the island Monastery of Wenchi Chirkos, founded in the 13th century by Tekle Haymanot, an Ethiopian saint recognized in foreign churches including in Egypt. In addition to boating across to the monastery, a local ecotourism association offers a selection of guided day hikes and pony treks ranging from the 4km Fincha Trail to the 16km Bagoba-Abagalalcha Trail, which follows the lakeshore before heading to the Dawala hot springs and waterfall.",
+            
+               "comment7" :"//===============map page =========================",  
+
+
+    "map":"Map",
+    "map_normal":"Normal",
+    "map_satellite":"Satellite",
+    "map_hybrid":"Hybrid",
+    "map_terrain":"Terrain",
+    
+               "comment8" :"//===============review page =========================",
+               
+    "review":"Reviews",
+    "review_no":"based on 123 customer review",
+    "write_review_button":"write a review",
+
+
+               "comment9" :"//===============Drawer =========================",
+   "guest":"Guest",
+   "calendar":"Ethiopian Calendar",
+   "calendar_conversion":"Calendar Conversion",
+   "currency":"Currency Exchange",
+   "change_lang":"Change Language",
+   "about_app":"About The App"
+
+
+
+
+
+
+
+
+
+
+}     

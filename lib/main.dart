@@ -10,16 +10,13 @@ import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'routes/route.dart' as route;
 
-// void main() => runApp(const MyApp());
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   runApp(const MyApp());
-// }
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('am', 'ET')],
@@ -29,29 +26,6 @@ void main() async {
     ),
   );
 }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       localizationsDelegates: context.localizationDelegates,
-//       supportedLocales: context.supportedLocales,
-//       locale: context.locale,
-//       debugShowCheckedModeBanner: false,
-//       // title: 'alobawa',
-//       // theme: ThemeData(
-//       //   primaryColor: Colors.black,
-//       //   primarySwatch: Colors.black,
-//       // ),
-
-//       onGenerateRoute: route.controller,
-//       initialRoute: route.homePage,
-//     );
-//   }
-// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -63,11 +37,11 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
       onGenerateRoute: route.controller,
-      initialRoute: route.homePage,
+      initialRoute: route.splash_screen,
       // home: const HomePage(),
     );
   }

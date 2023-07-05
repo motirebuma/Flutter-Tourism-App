@@ -9,6 +9,15 @@ import 'WidgetMap.dart';
 
 Widget ParkBody(context, img, String? name, double lat, double log,
     String? discription, String phone) {
+  void _launchPhoneDialer(String phoneNumber) async {
+    final String phoneUrl = 'tel:$phoneNumber';
+    if (await canLaunch(phoneUrl)) {
+      await launch(phoneUrl);
+    } else {
+      throw 'Could not launch $phoneUrl';
+    }
+  }
+
   return Scaffold(
     body: Container(
       // color: Colors.grey.shade300,
@@ -89,7 +98,7 @@ Widget ParkBody(context, img, String? name, double lat, double log,
               ),
               GestureDetector(
                 onTap: () {
-                  print('hello2');
+                  _launchPhoneDialer(phone);
                 },
                 child: Column(
                   children: [

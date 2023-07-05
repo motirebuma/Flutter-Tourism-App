@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/WidgetDestinationBox.dart';
 import '../../widgets/WidgetDestinationBox.dart';
+import 'package:easy_localization/easy_localization.dart';
+import '../../lang/localization_checker.dart';
 
 class TheNorth extends StatefulWidget {
   const TheNorth({super.key});
@@ -21,21 +23,18 @@ class _TheNorthState extends State<TheNorth> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [];
 
-    widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Lalibela',
-        'assets/catagory/north/lalibela.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
+    widgetList.add(WidgetDestinationBox().DestinationBox('lalibela'.tr(),
+        'assets/catagory/north/lalibela.jpg', 'dis_lalibela'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ParkBody(
               context,
               'assets/catagory/north/lalibela.jpg',
-              'Lalibela',
+              'lalibela'.tr(),
               89,
               88,
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+              'dis_lalibela'.tr(),
               '+25194745436'),
         ),
       );
@@ -43,81 +42,113 @@ class _TheNorthState extends State<TheNorth> {
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Axum',
-        'assets/catagory/north/axum.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
+        'axum'.tr(), 'assets/catagory/north/lalibela.jpg', 'dis_axum'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ParkBody(
               context,
               'assets/catagory/north/axum.jpg',
-              'Axum',
+              'axum'.tr(),
               89,
               88,
-              'axum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+              'dis_axum'.tr(),
               '+25194745436'),
         ),
       );
+      // null;
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Gondar',
-        'assets/catagory/north/gonder.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+        'Gondar'.tr(), 'assets/catagory/north/lalibela.jpg', 'dis_gondar'.tr(),
         () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/gonder.jpg',
+              'Gondar'.tr(),
+              89,
+              88,
+              'dis_gondar'.tr(),
+              '+25194745436'),
+        ),
+      );
+      // null;
+    }));
+
+    widgetList.add(WidgetDestinationBox().DestinationBox('alnegash'.tr(),
+        'assets/catagory/north/lalibela.jpg', 'dis_alnegash'.tr(), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/alnegash.jpg',
+              'alnegash'.tr(),
+              89,
+              88,
+              'dis_alnegash'.tr(),
+              '+25194745436'),
+        ),
+      );
+      // null;
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Al-Nagash',
-        'assets/catagory/north/alnegash.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
-    }));
-
-    widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Lake Tana',
-        'assets/catagory/north/tana.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+        'tana'.tr(), 'assets/catagory/north/tana.jpg', 'dis_tana'.tr(), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/tana.jpg',
+              'alnegash'.tr(),
+              89,
+              88,
+              'dis_tana'.tr(),
+              '+25194745436'),
+        ),
+      );
+      // null;
     }));
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Semen Mountains',
+        'seimen_mountains'.tr(),
         'assets/catagory/north/semenmountain.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+        'dis_seimen_mountains'.tr(), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/semenmountain.jpg',
+              'alnegash'.tr(),
+              89,
+              88,
+              'dis_seimen_mountains'.tr(),
+              '+25194745436'),
+        ),
+      );
+      // null;
     }));
-    widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Gheralta',
-        'assets/catagory/north/gheralta.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+
+    widgetList.add(WidgetDestinationBox().DestinationBox('gheralta'.tr(),
+        'assets/catagory/north/gheralta.jpg', 'dis_gheralta'.tr(), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/north/gheralta.jpg',
+              'gheralta'.tr(),
+              89,
+              88,
+              'dis_gheralta'.tr(),
+              '+25194745436'),
+        ),
+      );
+      // null;
     }));
     return Scaffold(
       backgroundColor: const Color(0xff1c1c1c),

@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import '../../routes/route.dart' as route;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import '../../models/sendFeedback.dart';
+import '../../services/auth_service.dart';
 
 class Comment extends StatefulWidget {
   const Comment({super.key});
@@ -11,6 +15,11 @@ class Comment extends StatefulWidget {
 }
 
 class _CommentState extends State<Comment> {
+  String _name = '';
+  String _rate = '';
+  String _description = '';
+  String _lacationname = '';
+
   comments() {
     return Padding(
       padding: const EdgeInsets.all(10.0),
@@ -247,97 +256,130 @@ class _CommentState extends State<Comment> {
 
                       child: ElevatedButton(
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: const Text('Add Review'),
-                                content: Container(
-                                  width: 350,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      TextField(
-                                        controller: _reviewController,
-                                        keyboardType: TextInputType.multiline,
-                                        maxLines: 4,
-                                        maxLength:
-                                            200, // Set the maxLength property to 200
-                                        decoration: InputDecoration(
-                                          hintText: 'Enter your review here...',
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey.shade500,
+                          FirebaseAuth.instance
+                              .authStateChanges()
+                              .listen((User? user) {
+                            if (user == null) {
+                              print('User is currently signed out!');
+
+                              AuthService().signInWithGoogle();
+                            } else {
+                              print('User is signed in!');
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Add Review'),
+                                    content: Container(
+                                      width: 350,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          TextField(
+                                            controller: _reviewController,
+                                            keyboardType:
+                                                TextInputType.multiline,
+                                            maxLines: 4,
+                                            maxLength:
+                                                200, // Set the maxLength property to 200
+                                            decoration: InputDecoration(
+                                              hintText:
+                                                  'Enter your review here...',
+                                              hintStyle: TextStyle(
+                                                color: Colors.grey.shade500,
+                                              ),
+                                            ),
+                                          ),
+                                          RatingBar.builder(
+                                            initialRating: _rating,
+                                            minRating: 1,
+                                            direction: Axis.horizontal,
+                                            allowHalfRating: true,
+                                            itemCount: 5,
+                                            itemPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 4.0),
+                                            itemBuilder: (context, _) =>
+                                                const Icon(
+                                              Icons.star,
+                                              color: Color(0xffd27405),
+                                            ),
+                                            onRatingUpdate: (rating) {
+                                              setState(() {
+                                                _rating = rating;
+                                                // print(_rating);
+                                              });
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text(
+                                          'Cancel',
+                                          style: TextStyle(
+                                            color: Color(0xff1c1c1c),
                                           ),
                                         ),
                                       ),
-                                      RatingBar.builder(
-                                        initialRating: _rating,
-                                        minRating: 1,
-                                        direction: Axis.horizontal,
-                                        allowHalfRating: true,
-                                        itemCount: 5,
-                                        itemPadding: const EdgeInsets.symmetric(
-                                            horizontal: 4.0),
-                                        itemBuilder: (context, _) => const Icon(
-                                          Icons.star,
-                                          color: Color(0xffd27405),
+                                      Container(
+                                        height: 40,
+                                        width: 120,
+                                        decoration: BoxDecoration(),
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            // Save the review and rating
+                                            String review =
+                                                _reviewController.text;
+                                            // Do something with the rating and review
+                                            Navigator.of(context).pop();
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor:
+                                                const Color(0xffd27405),
+                                            foregroundColor:
+                                                const Color(0xffffffff),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(
+                                                  10), // set border radius here
+                                              // side: const BorderSide(
+                                              //     // color: Color(0xffd27405),
+                                              //     width: 1), // set border here
+                                            ),
+                                          ),
+                                          child: TextButton(
+                                            onPressed: () {
+                                              _name = user.displayName!;
+                                              _rate = _rating.toString();
+                                              _description =
+                                                  _reviewController.text;
+                                              _lacationname = "lalibela";
+                                              // Navigator.of(context).pop();
+                                              sendFeedback(_name, _rate,
+                                                  _description, _lacationname);
+                                            },
+                                            child: const Text(
+                                              'Send',
+                                              style: TextStyle(
+                                                color: Color(0xff1c1c1c),
+                                              ),
+                                            ),
+                                          ),
                                         ),
-                                        onRatingUpdate: (rating) {
-                                          setState(() {
-                                            _rating = rating;
-                                            // print(_rating);
-                                          });
-                                        },
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
                                       ),
                                     ],
-                                  ),
-                                ),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: const Text(
-                                      'Cancel',
-                                      style: TextStyle(
-                                        color: Color(0xff1c1c1c),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 40,
-                                    width: 120,
-                                    decoration: BoxDecoration(),
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        // Save the review and rating
-                                        String review = _reviewController.text;
-                                        // Do something with the rating and review
-                                        Navigator.of(context).pop();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            const Color(0xffd27405),
-                                        foregroundColor:
-                                            const Color(0xffffffff),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(
-                                              10), // set border radius here
-                                          // side: const BorderSide(
-                                          //     // color: Color(0xffd27405),
-                                          //     width: 1), // set border here
-                                        ),
-                                      ),
-                                      child: Text('Submit'),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                ],
+                                  );
+                                },
                               );
-                            },
-                          );
+                            }
+                          });
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey.shade300,

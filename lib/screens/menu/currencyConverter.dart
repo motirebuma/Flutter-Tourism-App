@@ -57,84 +57,12 @@ class _CurrencyState extends State<Currency> {
 
   String dropdownFromValue = 'ETB';
   String dropdownToValue = 'USD';
-  String amount1 = 'Amount1';
-  String amount2 = 'Amount2';
+  String amount1 = 'Amount';
+  String amount2 = 'Amount';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        //Floating action button on Scaffold
-        backgroundColor: Color(0xffd27405),
-        onPressed: () {
-          //code to execute on button press
-          Navigator.pushNamed(context, route.homePage);
-        },
-        child: Icon(
-          Icons.home,
-          color: Color(0xff1c1c1c),
-        ), //icon inside button
-      ),
-
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      //floating action button location to left
-
-      bottomNavigationBar: BottomAppBar(
-        //bottom navigation bar on scaffold
-        color: Color(0xff1c1c1c),
-        shape: CircularNotchedRectangle(), //shape of notch
-        notchMargin:
-            5, //notche margin between floating button and bottom appbar
-        child: Row(
-          //children inside bottom appbar
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 90),
-              child: IconButton(
-                icon: Icon(
-                  Icons.calendar_month,
-                  color: Color(0xffd27405),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, route.calendar);
-                },
-              ),
-            ),
-            IconButton(
-              icon: const FaIcon(
-                FontAwesomeIcons.moneyBillTrendUp,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, route.currency);
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.info,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.user,
-                color: Color(0xffd27405),
-              ),
-              onPressed: () {},
-            ),
-            // IconButton(
-            //   icon: Icon(
-            //     Icons.user,
-            //     color: Color(0xffd27405),
-            //   ),
-            //   onPressed: () {},
-            // ),
-          ],
-        ),
-      ),
       backgroundColor: Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
@@ -153,11 +81,18 @@ class _CurrencyState extends State<Currency> {
                   child: Row(
                     children: [
                       Container(
-                        height: 50,
-                        width: 100,
-                        decoration: const BoxDecoration(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
                           color: Color(0xff1c1c1c),
-                          boxShadow: [
+                          image: DecorationImage(
+                            image: AssetImage(
+                              'assets/currency/$dropdownFromValue.png',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.black,
                               offset: Offset(0, 3),
@@ -165,10 +100,10 @@ class _CurrencyState extends State<Currency> {
                             )
                           ],
                         ),
-                        child: Image.asset(
-                          'assets/currency/$dropdownFromValue.png',
-                          fit: BoxFit.cover,
-                        ),
+                        // child: Image.asset(
+                        //   'assets/currency/$dropdownFromValue.png',
+                        //   fit: BoxFit.contain,
+                        // ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(5.0),
@@ -228,11 +163,18 @@ class _CurrencyState extends State<Currency> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        height: 50,
-                        width: 100,
-                        decoration: const BoxDecoration(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
                           color: Color(0xff1c1c1c),
-                          boxShadow: [
+                          borderRadius: BorderRadius.circular(50),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              'assets/currency/$dropdownToValue.png',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.black,
                               offset: Offset(0, 3),
@@ -240,10 +182,10 @@ class _CurrencyState extends State<Currency> {
                             )
                           ],
                         ),
-                        child: Image.asset(
-                          'assets/currency/$dropdownToValue.png',
-                          fit: BoxFit.cover,
-                        ),
+                        // child: Image.asset(
+                        //   'assets/currency/$dropdownToValue.png',
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(5.0),

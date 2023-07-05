@@ -4,16 +4,6 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -64,7 +54,7 @@ class DefaultFirebaseOptions {
     projectId: 'alobawa',
     storageBucket: 'alobawa.appspot.com',
     androidClientId:
-        '678641497101-g6hjmmvjcp43jo5c59ldchetu9gcm7qu.apps.googleusercontent.com',
+        '678641497101-hgqvirog9agcaubnvjqqhokhl19mjl4a.apps.googleusercontent.com',
     iosClientId:
         '678641497101-qpobkn4eno0vsv7uba8lkia57bpgu2ui.apps.googleusercontent.com',
     iosBundleId: 'com.example.alobawa',

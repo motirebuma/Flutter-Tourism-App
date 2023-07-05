@@ -3,6 +3,8 @@ import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import '../../lang/localization_checker.dart';
 
 import '../../widgets/WidgetDestinationBox.dart';
 import '../../widgets/WidgetDestinationBox.dart';
@@ -20,7 +22,7 @@ class _TheAfarTriangleState extends State<TheAfarTriangle> {
     List<Widget> widgetList = [];
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Awash Park',
+        'awash_doho'.tr(),
         'assets/wal.jpg',
         'lorem ipsum sdfjl sdf the awash park omow mnamn mnam', () {
       Navigator.push(

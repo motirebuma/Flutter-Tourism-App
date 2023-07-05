@@ -5,6 +5,7 @@ import 'package:alobawa/screens/homeScreenOld.dart';
 // import 'package:alobawa/screens/mapShow.dart';
 import 'package:alobawa/screens/menu/calendar.dart';
 import 'package:alobawa/screens/menu/currencyConverter.dart';
+import 'package:alobawa/screens/splash_screen.dart';
 // import 'package:alobawa/screens/menu/currencyScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,7 @@ import '../screens/googleMap.dart';
 
 // Route Names
 const String welcome = "welcome";
+const String splash_screen = "splash_screen";
 const String home_page = "home_page";
 const String homePage = "homePage";
 const String addis = "addis";
@@ -56,8 +58,8 @@ Route<dynamic> controller(RouteSettings settings) {
     case home:
       return MaterialPageRoute(builder: (context) => Home());
 
-    // case welcome:
-    //   return MaterialPageRoute(builder: (context) => Welcome());
+    case splash_screen:
+      return MaterialPageRoute(builder: (context) => SplashScreen());
     // case home_page:
     //   return MaterialPageRoute(builder: (context) => HomePage());
     case homePage:

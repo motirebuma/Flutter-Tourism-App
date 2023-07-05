@@ -7,12 +7,15 @@ import 'package:alobawa/screens/catagories/Southern.dart';
 import 'package:alobawa/screens/catagories/Western.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
 import 'package:alobawa/widgets/WidgetDiscover.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../lang/localization_checker.dart';
 import '../routes/route.dart' as route;
+import '../services/auth_service.dart';
 import 'Addis.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -47,16 +50,29 @@ class _HomeScreenState extends State<HomeScreen> {
     'Al-Negash is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     'Lalibela is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
   ];
+  late bool loggedIn;
 
   @override
   void initState() {
     super.initState();
+    checkLoginStatus();
+
     // Set up a timer that will change the content every 3 seconds
     Timer.periodic(Duration(seconds: 4), (timer) {
       setState(() {
         _currentIndex = (_currentIndex + 1) % _image.length;
       });
     });
+  }
+
+  Future<void> checkLoginStatus() async {
+    loggedIn = await isLogged();
+    // Perform further actions based on the logged-in status
+  }
+
+  Future<bool> isLogged() async {
+    User? user = await FirebaseAuth.instance.authStateChanges().first;
+    return user != null;
   }
 
   Widget build(BuildContext context) {
@@ -125,13 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
         toolbarHeight: 270,
         flexibleSpace: WidgetDiscoverBox().discoverBox(_title[_currentIndex],
             _image[_currentIndex], _description[_currentIndex], () {}),
-        leading: Column(
-          children: [
-            Builder(
-              builder: (BuildContext context) {
-                return Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: IconButton(
+        leading: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Column(
+            children: [
+              Builder(
+                builder: (BuildContext context) {
+                  return IconButton(
                     icon: const Icon(
                       Icons.menu,
                       size: 35,
@@ -139,14 +155,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
-                  ),
-                );
-              },
-            ),
-          ],
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
       // drawer
+
       drawer: Theme(
         data: Theme.of(context).copyWith(
           // Set the transparency here
@@ -157,98 +174,287 @@ class _HomeScreenState extends State<HomeScreen> {
             // Important: Remove any padding from the ListView.
             // padding: EdgeInsets.zero,
             children: [
-              const SizedBox(
-                height: 150,
+              SizedBox(
+                height: 50,
               ),
-              ListTile(
-                leading: const FaIcon(
-                  FontAwesomeIcons.calendar,
-                  color: Color(0xffd27405),
-                  size: 18,
-                ),
-                title: const Text(
-                  'Ethiopian Calendar',
-                  style: TextStyle(
-                    color: Color(0xffd27405),
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                onTap: () {
-                  Navigator.pushNamed(context, route.calendar);
+              Builder(
+                builder: (context) {
+                  if (loggedIn) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/places/north.jpg'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Text(
+                          'New User',
+                          style: TextStyle(
+                            color: Color(0xffd27405),
+                            fontSize: 18,
+                            fontFamily: 'Poppins',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        ListTile(
+                          leading: const FaIcon(
+                            FontAwesomeIcons.calendar,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: const Text(
+                            'Ethiopian Calendar',
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, route.calendar);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.edit_calendar_sharp,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: const Text(
+                            'Calender Conversion',
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, route.calendar);
+                          },
+                        ),
+                        ListTile(
+                            leading: const FaIcon(
+                              FontAwesomeIcons.rotate,
+                              color: Color(0xffd27405),
+                              size: 18,
+                            ),
+                            title: const Text(
+                              'Currency Exchange',
+                              style: TextStyle(
+                                color: Color(0xffd27405),
+                                fontSize: 18,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, route.currency);
+                            }),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.language_sharp,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: Text(
+                            'change_language'.tr(),
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            LocalizationChecker.changeLanguge(context);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.info,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: Text(
+                            'about'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ListTile(
+                          leading: const FaIcon(
+                            FontAwesomeIcons.calendar,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: const Text(
+                            'Logout',
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            AuthService().handleSignOut().then((value) =>
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomeScreen())));
+                          },
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/avatar.jpg'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Guest',
+                          style: TextStyle(
+                            color: Color(0xffd27405),
+                            fontSize: 18,
+                            fontFamily: 'Poppins',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        ListTile(
+                          leading: const FaIcon(
+                            FontAwesomeIcons.calendar,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: const Text(
+                            'Ethiopian Calendar',
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, route.calendar);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.edit_calendar_sharp,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: const Text(
+                            'Calender Conversion',
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, route.calendar);
+                          },
+                        ),
+                        ListTile(
+                            leading: const FaIcon(
+                              FontAwesomeIcons.rotate,
+                              color: Color(0xffd27405),
+                              size: 18,
+                            ),
+                            title: const Text(
+                              'Currency Exchange',
+                              style: TextStyle(
+                                color: Color(0xffd27405),
+                                fontSize: 18,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, route.currency);
+                            }),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.language_sharp,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: Text(
+                            'change_language'.tr(),
+                            style: TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            LocalizationChecker.changeLanguge(context);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.info,
+                            color: Color(0xffd27405),
+                            size: 18,
+                          ),
+                          title: Text(
+                            'about'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xffd27405),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ],
+                    );
+                  }
                 },
               ),
-              ListTile(
-                leading: const Icon(
-                  Icons.edit_calendar_sharp,
-                  color: Color(0xffd27405),
-                  size: 18,
-                ),
-                title: const Text(
-                  'Calender Conversion',
-                  style: TextStyle(
-                    color: Color(0xffd27405),
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                onTap: () {
-                  Navigator.pushNamed(context, route.calendar);
-                },
+              SizedBox(
+                height: 20,
               ),
-              ListTile(
-                  leading: const FaIcon(
-                    FontAwesomeIcons.rotate,
-                    color: Color(0xffd27405),
-                    size: 18,
-                  ),
-                  title: const Text(
-                    'Currency Exchange',
-                    style: TextStyle(
-                      color: Color(0xffd27405),
-                      fontSize: 18,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, route.currency);
-                  }),
-              ListTile(
-                leading: const Icon(
-                  Icons.language_sharp,
-                  color: Color(0xffd27405),
-                  size: 18,
-                ),
-                title: Text(
-                  'change_language'.tr(),
-                  style: TextStyle(
-                    color: Color(0xffd27405),
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                onTap: () {
-                  LocalizationChecker.changeLanguge(context);
-                },
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.info,
-                  color: Color(0xffd27405),
-                  size: 18,
-                ),
-                title: Text(
-                  'about'.tr(),
-                  style: const TextStyle(
-                    color: Color(0xffd27405),
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
+              // Rest of your ListTiles...
             ],
           ),
         ),

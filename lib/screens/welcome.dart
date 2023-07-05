@@ -71,30 +71,9 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ],
                   ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     Container(
-                  //       width: 300,
-                  //       child: const Text(
-                  //         'The land of beauty and wonder',
-                  //         textAlign: TextAlign.center,
-                  //         style: TextStyle(
-                  //           fontSize: 25.0,
-                  //           fontWeight: FontWeight.w600,
-                  //           fontFamily: 'Poppins',
-
-                  //           // color: Colors.white,s
-                  //           color: Color(0xffd27405),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                   const SizedBox(
                     height: 335.0,
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
