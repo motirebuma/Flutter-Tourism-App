@@ -23,8 +23,8 @@ class _TheNorthState extends State<TheNorth> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [];
 
-    widgetList.add(WidgetDestinationBox().DestinationBox('lalibela'.tr(),
-        'assets/catagory/north/lalibela.jpg', 'dis_lalibela'.tr(), () {
+    widgetList.add(WidgetDestinationBox().DestinationBox(
+        'lalibela'.tr(), 'assets/catagory/north/lalibela.jpg', '', () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -42,7 +42,7 @@ class _TheNorthState extends State<TheNorth> {
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'axum'.tr(), 'assets/catagory/north/lalibela.jpg', 'dis_axum'.tr(), () {
+        'axum'.tr(), 'assets/catagory/north/axum.jpg', ''.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -60,8 +60,7 @@ class _TheNorthState extends State<TheNorth> {
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Gondar'.tr(), 'assets/catagory/north/lalibela.jpg', 'dis_gondar'.tr(),
-        () {
+        'Gondar'.tr(), 'assets/catagory/north/gonder.jpg', '', () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -78,8 +77,8 @@ class _TheNorthState extends State<TheNorth> {
       // null;
     }));
 
-    widgetList.add(WidgetDestinationBox().DestinationBox('alnegash'.tr(),
-        'assets/catagory/north/lalibela.jpg', 'dis_alnegash'.tr(), () {
+    widgetList.add(WidgetDestinationBox().DestinationBox(
+        'alnegash'.tr(), 'assets/catagory/north/alnegash.jpg', '', () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -97,14 +96,14 @@ class _TheNorthState extends State<TheNorth> {
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'tana'.tr(), 'assets/catagory/north/tana.jpg', 'dis_tana'.tr(), () {
+        'tana'.tr(), 'assets/catagory/north/tana.jpg', ''.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ParkBody(
               context,
               'assets/catagory/north/tana.jpg',
-              'alnegash'.tr(),
+              'tana'.tr(),
               89,
               88,
               'dis_tana'.tr(),
@@ -114,16 +113,15 @@ class _TheNorthState extends State<TheNorth> {
       // null;
     }));
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'seimen_mountains'.tr(),
-        'assets/catagory/north/semenmountain.jpg',
-        'dis_seimen_mountains'.tr(), () {
+        'seimen_mountains'.tr(), 'assets/catagory/north/semenmountain.jpg', '',
+        () {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ParkBody(
               context,
               'assets/catagory/north/semenmountain.jpg',
-              'alnegash'.tr(),
+              'seimen_mountains'.tr(),
               89,
               88,
               'dis_seimen_mountains'.tr(),
@@ -133,18 +131,18 @@ class _TheNorthState extends State<TheNorth> {
       // null;
     }));
 
-    widgetList.add(WidgetDestinationBox().DestinationBox('gheralta'.tr(),
-        'assets/catagory/north/gheralta.jpg', 'dis_gheralta'.tr(), () {
+    widgetList.add(WidgetDestinationBox().DestinationBox(
+        'geraltha'.tr(), 'assets/catagory/north/gheralta.jpg', '', () {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ParkBody(
               context,
               'assets/catagory/north/gheralta.jpg',
-              'gheralta'.tr(),
+              'geraltha'.tr(),
               89,
               88,
-              'dis_gheralta'.tr(),
+              'dis_geraltha'.tr(),
               '+25194745436'),
         ),
       );
@@ -154,7 +152,7 @@ class _TheNorthState extends State<TheNorth> {
       backgroundColor: const Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('The North'),
+        title: Text('north'.tr()),
         backgroundColor: const Color(0xff1c1c1c),
         foregroundColor: const Color(0xffd27504),
         elevation: 0,

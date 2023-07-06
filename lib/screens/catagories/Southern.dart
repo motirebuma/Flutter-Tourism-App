@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/WidgetDestinationBox.dart';
 import '../../widgets/WidgetDestinationBox.dart';
+import 'package:easy_localization/easy_localization.dart';
+import '../../lang/localization_checker.dart';
+import '../../widgets/WidgetDiscoveryBody.dart';
 
 class TheSouth extends StatefulWidget {
   const TheSouth({super.key});
@@ -20,57 +23,78 @@ class _TheSouthState extends State<TheSouth> {
     List<Widget> widgetList = [];
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Omo National Park',
-        'assets/catagory/south/omo.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+        'omo_park'.tr(), 'assets/catagory/south/omo.jpg', '', () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/south/omo.jpg',
+              'omo_park'.tr(),
+              89,
+              88,
+              'dis_omo'.tr(),
+              '+25194745436'),
+        ),
+      );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Nechsar National Park',
-        'assets/catagory/south/nechsar.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+        'nechsar'.tr(), 'assets/catagory/south/nechsar.jpg', '', () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/south/nechsar.jpg',
+              'nechsar'.tr(),
+              89,
+              88,
+              'dis_nechsar'.tr(),
+              '+2519470006'),
+        ),
+      );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Dorze Village',
-        'assets/catagory/south/dorze.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
-      null;
+        'dorze'.tr(), 'assets/catagory/south/dorze.jpg', '', () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/south/dorze.jpg',
+              'dorze'.tr(),
+              89,
+              88,
+              'dis_dorze'.tr(),
+              '+2519470006'),
+        ),
+      );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Konso Caltural landscape',
-        'assets/catagory/south/konso.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-      // );
+        'konso'.tr(), 'assets/catagory/south/konso.jpg', '', () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/south/konso.jpg',
+              'konso'.tr(),
+              89,
+              88,
+              'dis_konso'.tr(),
+              '+2519470006'),
+        ),
+      );
     }));
 
     return Scaffold(
       backgroundColor: const Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('The South'),
+        title: Text('south'.tr()),
         backgroundColor: const Color(0xff1c1c1c),
         foregroundColor: Color(0xffd27504),
       ),

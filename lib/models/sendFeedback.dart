@@ -2,13 +2,9 @@ import 'package:http/http.dart' as http;
 
 Future<void> sendFeedback(String fullname, String rating, String description,
     String locationname) async {
-  final url = Uri.parse('http://localhost/php-API/feedback/sendreview.php');
-  final response = await http.post(url, body: {
-    'fullname': fullname,
-    'rating': rating,
-    'description': description,
-    'locationname': locationname,
-  });
+  final url = Uri.parse(
+      'https://fluttertravellapi.000webhostapp.com/postreview.php?username=$fullname&rating=$rating&review=$description&place=$locationname');
+  final response = await http.get(url);
 
   if (response.statusCode == 201) {
     print('Feedback sent successfully');

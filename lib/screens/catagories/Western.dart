@@ -1,11 +1,15 @@
 import 'package:alobawa/screens/Addis.dart';
 import 'package:alobawa/screens/homeScreenOld.dart';
 import 'package:alobawa/widgets/WidgetCatagoryBox.dart';
+import 'package:alobawa/widgets/WidgetDiscoveryBody.dart';
 import 'package:alobawa/widgets/WidgetPlaceBox.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/WidgetDestinationBox.dart';
 import '../../widgets/WidgetDestinationBox.dart';
+import '../../lang/localization_checker.dart';
+import 'package:easy_localization/easy_localization.dart';
+import '../../lang/localization_checker.dart';
 
 class TheWest extends StatefulWidget {
   const TheWest({super.key});
@@ -19,58 +23,88 @@ class _TheWestState extends State<TheWest> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [];
 
-    widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Jimma',
-        'assets/wal.jpg',
-        'jimma is lorem ipusm the jimma man lorem ipsum man wagawan man llorem ipsum sdfjl sdf',
-        () {
+    widgetList.add(WidgetDestinationBox()
+        .DestinationBox('jimma'.tr(), 'assets/catagory/west/jimma.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/west/jimma.jpg',
+              'jimma'.tr(),
+              89,
+              88,
+              'dis_jimma'.tr(),
+              '+25194324312'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Gambella National Park',
-        'assets/places/addis.jpg',
-        'the gambella national parkf saisadf lopre fisum fasloer fasjel asjfeifea flakfjeia fejl dsjfoei jsajhfd.',
-        () {
+        'gambella_park'.tr(), 'assets/catagory/west/gambella.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/west/gambella.jpg',
+              'gambella_park'.tr(),
+              89,
+              88,
+              'dis_gambella_park'.tr(),
+              '+25194324312'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Kafa Biospher reserver',
-        'assets/places/north.jpg',
-        'Kafa Biospher reserver of lorem ipsum known for its man wagawan man, if we if we rule lablab wuha in every bowanbowa.',
-        () {
+        'kafa'.tr(), 'assets/catagory/west/gambella.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/west/gambella.jpg',
+              'kafa'.tr(),
+              89,
+              88,
+              'dis_kafa'.tr(),
+              '+25194324312'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Chebear Churchura Natioal Park',
-        'assets/wal.jpg',
-        'Chebear Churchura Natioal Park dsjf lorem ipsum chebera churchura national park man wagawan man.',
-        () {
+        'chebera_churchura'.tr(), 'assets/catagory/west/chebera.png', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/west/chebera.png',
+              'chebera_churchura'.tr(),
+              89,
+              88,
+              'dis_chebera'.tr(),
+              '+25194324312'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Wanchi Lake',
-        'assets/wal.jpg',
-        'Wanchi Lake lorepsaf ljeij fakjeijf aejijd kfjei ksdjfioe fsjfoiejfkejidjfkl lkdsjfoiej kljdfoiej fskdj',
-        () {
+        'wonchi'.tr(), 'assets/catagory/west/chebera.png', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/west/chebera.png',
+              'wonchi'.tr(),
+              89,
+              88,
+              'dis_wonchi'.tr(),
+              '+251943888012'),
+        ),
       );
     }));
 
@@ -78,7 +112,7 @@ class _TheWestState extends State<TheWest> {
       backgroundColor: const Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('The West'),
+        title: Text('west'.tr()),
         backgroundColor: const Color(0xff1c1c1c),
         foregroundColor: Color(0xffd27504),
       ),

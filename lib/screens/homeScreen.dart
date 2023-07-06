@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'dart:async';
 
+import 'package:alobawa/screens/catagories/AfarrTriangle.dart';
 import 'package:alobawa/screens/catagories/Eastern.dart';
 import 'package:alobawa/screens/catagories/Northern.dart';
 import 'package:alobawa/screens/catagories/Southern.dart';
@@ -44,11 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
     'Lalibela'
   ];
   final List<String> _description = [
-    'Addis Abeba is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-    'Omo Valley is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-    'Nechsar is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-    'Al-Negash is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-    'Lalibela is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+    'Addis Ababa, the capital city of Ethiopia, is a vibrant and bustling metropolis located in . . .',
+    'Omo National Park is where one can be accustomed to a variety of mammal species with . . .',
+    'Considered more as a point of departure for the southern extremities of Ethiopia, including . . .',
+    'The town of Negash or sometimes referred to as Al Nejash is Africa’s first Muslim . . .',
+    'Comprising eleven churches and two chapels, Ethiopia’s labyrinthine ‘New Jerusalem’, excavated by King Lalibela in . . .',
   ];
   late bool loggedIn;
 
@@ -82,43 +83,43 @@ class _HomeScreenState extends State<HomeScreen> {
     // catagories
     // * Addis Ababa
     catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/catagory/addis/addis.jpg', 'Addis Ababa', () {
+        .placeBox('assets/catagory/addis/addis.jpg', 'addis_ababa'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const Addis()),
       );
     }));
     //! The North
-    catagoryWidgets.add(
-        WidgetCategoryBox().placeBox('assets/places/north.jpg', 'Northern', () {
+    catagoryWidgets.add(WidgetCategoryBox()
+        .placeBox('assets/places/north.jpg', 'northern'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const TheNorth()),
       );
     }));
-    catagoryWidgets.add(
-        WidgetCategoryBox().placeBox('assets/places/south.jpg', 'Southern', () {
+    catagoryWidgets.add(WidgetCategoryBox()
+        .placeBox('assets/places/south.jpg', 'southern'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const TheSouth()),
       );
     }));
-    catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/east.jpg', 'Nature of East', () {
+    catagoryWidgets.add(
+        WidgetCategoryBox().placeBox('assets/places/east.jpg', 'east'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const TheEast()),
       );
     }));
     catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/east.jpg', 'Afar Triangle', () {
+        .placeBox('assets/catagory/afar/afar.jpg', 'afar'.tr(), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const TheEast()),
+        MaterialPageRoute(builder: (context) => const TheAfarTriangle()),
       );
     }));
     catagoryWidgets.add(WidgetCategoryBox()
-        .placeBox('assets/places/coffee.jpeg', 'Western', () {
+        .placeBox('assets/places/coffee.jpeg', 'west'.tr(), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => TheWest()),
@@ -218,8 +219,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color(0xffd27405),
                             size: 18,
                           ),
-                          title: const Text(
-                            'Ethiopian Calendar',
+                          title: Text(
+                            'calendar'.tr(),
                             style: TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -245,7 +246,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.pushNamed(context, route.calendar);
+                            Navigator.pushNamed(
+                                context, route.calenderConverter);
                           },
                         ),
                         ListTile(
@@ -254,8 +256,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Color(0xffd27405),
                               size: 18,
                             ),
-                            title: const Text(
-                              'Currency Exchange',
+                            title: Text(
+                              'currency'.tr(),
                               style: TextStyle(
                                 color: Color(0xffd27405),
                                 fontSize: 18,
@@ -272,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 18,
                           ),
                           title: Text(
-                            'change_language'.tr(),
+                            'change_lang'.tr(),
                             style: TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -290,7 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 18,
                           ),
                           title: Text(
-                            'about'.tr(),
+                            'about_app'.tr(),
                             style: const TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -307,8 +309,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color(0xffd27405),
                             size: 18,
                           ),
-                          title: const Text(
-                            'Logout',
+                          title: Text(
+                            'logout'.tr(),
                             style: TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -349,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Text(
-                          'Guest',
+                          'guest'.tr(),
                           style: TextStyle(
                             color: Color(0xffd27405),
                             fontSize: 18,
@@ -363,8 +365,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color(0xffd27405),
                             size: 18,
                           ),
-                          title: const Text(
-                            'Ethiopian Calendar',
+                          title: Text(
+                            'calendar'.tr(),
                             style: TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -390,7 +392,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.pushNamed(context, route.calendar);
+                            Navigator.pushNamed(
+                                context, route.calenderConverter);
                           },
                         ),
                         ListTile(
@@ -399,8 +402,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Color(0xffd27405),
                               size: 18,
                             ),
-                            title: const Text(
-                              'Currency Exchange',
+                            title: Text(
+                              'currency'.tr(),
                               style: TextStyle(
                                 color: Color(0xffd27405),
                                 fontSize: 18,
@@ -435,7 +438,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 18,
                           ),
                           title: Text(
-                            'about'.tr(),
+                            'about_app'.tr(),
                             style: const TextStyle(
                               color: Color(0xffd27405),
                               fontSize: 18,
@@ -498,8 +501,8 @@ class _HomeScreenState extends State<HomeScreen> {
           // ),
           // WidgetDiscoverBox().discoverBox(_title[_currentIndex],
           //     _image[_currentIndex], _description[_currentIndex], () {}),
-          const Text(
-            'Discover Ethiopia',
+          Text(
+            'discover_ethiopia'.tr(),
             style: TextStyle(
                 color: Color(0xffd27405),
                 fontFamily: 'Poppins',

@@ -4,6 +4,7 @@ import 'package:alobawa/screens/homeScreen.dart';
 import 'package:alobawa/screens/homeScreenOld.dart';
 // import 'package:alobawa/screens/mapShow.dart';
 import 'package:alobawa/screens/menu/calendar.dart';
+import 'package:alobawa/screens/menu/calender_converter.dart';
 import 'package:alobawa/screens/menu/currencyConverter.dart';
 import 'package:alobawa/screens/splash_screen.dart';
 // import 'package:alobawa/screens/menu/currencyScreen.dart';
@@ -70,8 +71,8 @@ Route<dynamic> controller(RouteSettings settings) {
     // // menu options
     case calendar:
       return MaterialPageRoute(builder: (context) => CalendarPage());
-    // case calenderConverter:
-    //   return MaterialPageRoute(builder: (context) => CalendarConverter());
+    case calenderConverter:
+      return MaterialPageRoute(builder: (context) => CalendarConverter());
     case currency:
       return MaterialPageRoute(builder: (context) => Currency());
     // case about:

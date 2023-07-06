@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/WidgetDestinationBox.dart';
 import '../../widgets/WidgetDestinationBox.dart';
+import '../../lang/localization_checker.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import '../../widgets/WidgetDiscoveryBody.dart';
 
 class TheEast extends StatefulWidget {
   const TheEast({super.key});
@@ -19,51 +23,77 @@ class _TheEastState extends State<TheEast> {
   Widget build(BuildContext context) {
     List<Widget> widgetList = [];
 
-    widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Harar',
-        'assets/wal.jpg',
-        'harar the living museums bla bla bla.. good bye frined', () {
+    widgetList.add(WidgetDestinationBox()
+        .DestinationBox('harar'.tr(), 'assets/catagory/east/harar.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/east/harar.jpg',
+              'harar'.tr(),
+              89,
+              88,
+              'dis_harar'.tr(),
+              '+25194745436'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Bale Mountains',
-        'assets/places/addis.jpg',
-        'mountain the dsfjkl jdsfjle mount mount dsfdads hello mountain.. dude what is mountain i dont know:(',
-        () {
+        'bale_mountains'.tr(), 'assets/catagory/east/harar.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/east/harar.jpg',
+              'bale_mountains'.tr(),
+              89,
+              88,
+              'dis_bale'.tr(),
+              '+25194745436'),
+        ),
       );
     }));
 
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Babile',
-        'assets/places/north.jpg',
-        'babile the mother of elephants sdfjsafjdl mnaba nw yalkew ayii..', () {
+        'babile'.tr(), 'assets/catagory/east/harar.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/east/harar.jpg',
+              'babile'.tr(),
+              89,
+              88,
+              'dis_babile'.tr(),
+              '+25194745436'),
+        ),
       );
     }));
     widgetList.add(WidgetDestinationBox().DestinationBox(
-        'Sofumar Cave',
-        'assets/catagory/east/sofumar.jpg',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-        () {
+        'sofumar'.tr(), 'assets/catagory/east/sofumar.jpg', '', () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OldHomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => ParkBody(
+              context,
+              'assets/catagory/east/sofumar.jpg',
+              'sofumar'.tr(),
+              89,
+              88,
+              'dis_sofumar'.tr(),
+              '+25194745436'),
+        ),
       );
     }));
     return Scaffold(
       backgroundColor: const Color(0xff1c1c1c),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('The East'),
+        title: Text('east'.tr()),
         backgroundColor: const Color(0xff1c1c1c),
         foregroundColor: Color(0xffd27504),
       ),

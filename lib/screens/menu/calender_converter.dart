@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:abushakir/abushakir.dart';
+
+import '../../models/calendar/EthiopianCalendar.dart';
+import '../../models/calendar/GregorianCalendar.dart';
+
+enum CalendarMode { ecToGc, gcToEc }
 
 class CalendarConverter extends StatefulWidget {
   @override
@@ -7,102 +11,89 @@ class CalendarConverter extends StatefulWidget {
 }
 
 class _CalendarConverterState extends State<CalendarConverter> {
-  final TextEditingController _inputController = TextEditingController();
-  final TextEditingController _outputController = TextEditingController();
-  bool _isGregorian = true;
+  TextEditingController _yearController = TextEditingController();
+  TextEditingController _monthController = TextEditingController();
+  TextEditingController _dayController = TextEditingController();
+  CalendarMode _selectedMode = CalendarMode.ecToGc;
+  String _convertedResult = '';
 
-  @override
-  void dispose() {
-    _inputController.dispose();
-    _outputController.dispose();
-    super.dispose();
+  void convert() {
+    int year = int.tryParse(_yearController.text) ?? 0;
+    int month = int.tryParse(_monthController.text) ?? 0;
+    int day = int.tryParse(_dayController.text) ?? 0;
+
+    if (_selectedMode == CalendarMode.ecToGc) {
+      // Convert Ethiopian Calendar (EC) to Gregorian Calendar (GC)
+      var ec = EthiopianCalendar(year: year, month: month, day: day);
+      var gc = ec.toGC();
+      _convertedResult =
+          'Converted to GC: ${gc.month_name}, ${gc.year}, ${gc.day_name}';
+    } else {
+      // Convert Gregorian Calendar (GC) to Ethiopian Calendar (EC)
+      var gc = GregorianCalendar(year: year, month: month, day: day);
+      var ec = gc.toEc();
+      _convertedResult =
+          'Converted to EC: ${ec.year}, ${ec.month_name}, ${ec.day}';
+    }
+
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Calendar Converter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Calendar Converter'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Calendar Converter'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: TextField(
-                controller: _inputController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: _isGregorian
-                      ? 'Gregorian Date (YYYY-MM-DD)'
-                      : 'Ethiopian Date (YYYY-MM-DD)',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Gregorian'),
-                Switch(
-                  value: _isGregorian,
-                  onChanged: (value) {
-                    setState(() {
-                      _isGregorian = value;
-                      _inputController.text = '';
-                      _outputController.text = '';
-                    });
-                  },
-                ),
-                Text('Ethiopian'),
-              ],
-            ),
-            ElevatedButton(
-              onPressed: () {
+            Text('Convert from:'),
+            DropdownButton<CalendarMode>(
+              value: _selectedMode,
+              onChanged: (mode) {
                 setState(() {
-                  if (_isGregorian) {
-                    // Convert the Gregorian date to Ethiopian
-                    var gregorianDate = DateTime.parse(_inputController.text);
-                    EtDatetime ethiopianDate =
-                        new EtDatetime.fromMillisecondsSinceEpoch(
-                            gregorianDate.millisecondsSinceEpoch);
-                    // var ethiopianDate = EthiopianDate.fromDateTime(gregorianDate);
-                    _outputController.text =
-                        '${ethiopianDate.year}-${ethiopianDate.month}-${ethiopianDate.day}';
-                  } else {
-                    // Convert the Ethiopian date to Gregorian
-                    var ethiopianDate = DateTime.parse(_inputController.text);
-                    // DateTime gregorian = new DateTime.fromMillisecondsSinceEpoch(ethiopianDate.moment);
-                    // var gregorianDate = ethiopianDate.toDateTimeLocal();
-
-                    EtDatetime ethiopian =
-                        EtDatetime.parse(ethiopianDate.toString());
-                    DateTime gregorianDate =
-                        new DateTime.fromMillisecondsSinceEpoch(
-                            ethiopian.moment);
-                    _outputController.text =
-                        '${gregorianDate.year}-${gregorianDate.month.toString().padLeft(2, '0')}-${gregorianDate.day.toString().padLeft(2, '0')}';
-                  }
+                  _selectedMode = mode!;
                 });
               },
+              items: [
+                DropdownMenuItem(
+                  value: CalendarMode.ecToGc,
+                  child: Text('Ethiopian Calendar to Gregorian Calendar'),
+                ),
+                DropdownMenuItem(
+                  value: CalendarMode.gcToEc,
+                  child: Text('Gregorian Calendar to Ethiopian Calendar'),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.0),
+            Text('Year:'),
+            TextFormField(
+              controller: _yearController,
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 10.0),
+            Text('Month:'),
+            TextFormField(
+              controller: _monthController,
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 10.0),
+            Text('Day:'),
+            TextFormField(
+              controller: _dayController,
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: convert,
               child: Text('Convert'),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: TextField(
-                controller: _outputController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: _isGregorian
-                      ? 'Ethiopian Date (YYYY-MM-DD)'
-                      : 'Gregorian Date (YYYY-MM-DD)',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
+            SizedBox(height: 20.0),
+            Text(_convertedResult),
           ],
         ),
       ),
